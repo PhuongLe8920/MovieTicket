@@ -1,0 +1,19 @@
+<!-- <div class="row owl-carousel owl-theme">
+  <div class="item card col-sm-12"  *ngFor="let new of listNew">
+    <img class="card-img-top" [src]="new.img" alt="">
+    <div class="card-body">
+      <a class="card-title" routerLink="/tin-tuc"><h2>{{new.title}}</h2></a>
+      <p class="card-text">{{new.detail.substring(0,120) + "..." }}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="card m-3">
+  <img class="card-img-top" [src]="itemContent.img" alt="">
+  <div class="card-body">
+    <a class="card-title" routerLink="/tin-tuc">
+      <h5>{{itemContent.title}}</h5>
+    </a>
+    <p class="card-text">{{itemContent.detail | cutString:120 }}</p>
+  </div>
+</div>

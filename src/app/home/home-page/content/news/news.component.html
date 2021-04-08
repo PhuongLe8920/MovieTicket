@@ -1,0 +1,11 @@
+
+<!-- https://www.positronx.io/how-to-integrate-owl-carousel-2-in-angular/ -->
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor='let item of listNew'>
+    <app-item-content [itemContent]='item' ></app-item-content>
+  </ng-template>
+</owl-carousel-o>
+
+
+

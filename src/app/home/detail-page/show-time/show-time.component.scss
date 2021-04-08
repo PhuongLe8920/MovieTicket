@@ -1,0 +1,105 @@
+/* Showtimes */
+.showtimes{
+  background-color: white;
+  margin: 20px 50px;
+  padding: 10px;
+  border-radius: 7px;
+  // height: 500px;
+}
+.showtimes h4 {
+  text-align: center;
+  margin: 15px 0 25px;
+  letter-spacing: 5px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.showtimes-options{
+  margin: 10px 10px 50px 30px;
+  padding: 10px;
+  width: 250px;
+  font-weight: 400;
+  font-size: 18px;
+  border: none;
+  background-color: #0a2029f2;
+  color: white;
+}
+.showtimes-detail ul {
+list-style: none;
+display: flex;
+gap: 5%;
+justify-content: center;
+margin-left: 0;
+padding-left: 0;
+}
+
+.showtimes-detail a {
+  color: black;
+  font-size: 20px;
+}
+.showtimes-detail a:hover{
+  text-decoration: none;
+  color: coral;
+  background-color: #0a2029f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.showtimes-detail .weekend a {
+  color: #f44336;
+}
+.showtimes-detail .weekend a:hover {
+  color: coral;
+  transition: all .3s;
+}
+
+.showtimes-detail button {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to top right, #f44336, #ce8405fd);
+  color: white;
+  margin: 10px 0;
+}
+
+
+// table
+table {
+  width: 90%;
+  border-collapse:separate;
+  margin-left: 30px;
+}
+table thead {
+  background-color: #0a2029f2;
+  color: white;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: normal;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+table a.booking-btn {
+  text-decoration: none;
+  color: white!important;
+  font-size: 15px;
+}
+table a.booking-btn:hover {
+  text-decoration: none;
+  color: white!important;
+  font-size: 15px;
+  padding: none;
+  background-color: transparent;
+}
+table img {
+  display: inline;
+  width: 30px;
+  height: 30px;
+}
+

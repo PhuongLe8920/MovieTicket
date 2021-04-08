@@ -1,0 +1,28 @@
+<app-loader></app-loader>
+<div class="container">
+  <div class="row detail-movie">
+    <div class="col-sm-12 col-md-6 mx-0">
+      <img class="img-fluid" [src]="detail.hinhAnh">
+    </div>
+
+    <div class="col-sm-12 col-md-6 mx-0">
+      <div class="row">
+        <h4 class="movie-name text-center">{{detail.tenPhim}}</h4>
+        <div class="text-detail">
+          <p>{{detail.moTa}}</p>
+          <br>
+          <p>Ngày khởi chiếu: {{detail.ngayKhoiChieu | date:'shortDate'}}</p>
+          <p>Thời lượng: {{detail.lichChieu.length}} phút</p>
+        </div>
+        <div class="btn-detail-movie">
+          <button mat-stroked-button (click)="showTrailer(detail.trailer)">
+            <a href={{detail.trailer}} target="_blank">
+              Trailer
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

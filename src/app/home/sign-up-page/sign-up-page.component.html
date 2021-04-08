@@ -1,0 +1,117 @@
+<div class="container add-user-form mt-3">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mx-auto">
+      <h2>Nhập thông tin: </h2>
+      <form #formDKy="ngForm" (ngSubmit)='dangKy(formDKy)'>
+        <!-- Tài khoản -->
+        <mat-form-field class="form-group">
+          <input matInput #TaiKhoan="ngModel" name="taiKhoan" ngModel placeholder="Tài khoản" type="text" class="form-control" required>
+
+          <!-- validation -->
+          <mat-error class="alert alert-danger" *ngIf="TaiKhoan.errors && TaiKhoan.touched">
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+        <!-- Mật khẩu -->
+        <mat-form-field class="form-group">
+          <input matInput
+          #MatKhau="ngModel" ngModel
+          name="matKhau"
+          placeholder="Mật khẩu"
+          type="password"
+          class="form-control"
+          required
+          minlength="3">
+
+           <!-- validation -->
+          <mat-error class="alert alert-danger" *ngIf="MatKhau.errors?.required && MatKhau.touched">
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+          <mat-error class="alert alert-danger"
+          *ngIf="MatKhau.touched && MatKhau.errors?.minlength">
+            <span>Mật khẩu phải từ 3 kí tự</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Họ tên -->
+        <mat-form-field class="form-group">
+          <input matInput
+          #HoTen="ngModel" ngModel
+          name="hoTen"
+          placeholder="Họ tên"
+          type="text"
+          class="form-control"
+          required
+          minlength="4"
+          [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+          "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+          "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'
+          >
+
+           <!-- validation -->
+          <mat-error class="alert alert-danger" *ngIf="HoTen.errors?.required && HoTen.touched">
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+
+          <mat-error class="alert alert-danger"
+          *ngIf="HoTen.touched && HoTen.errors?.minlength">
+            <span>Họ tên phải từ 4 kí tự</span>
+          </mat-error>
+
+          <mat-error class="alert alert-danger"
+          *ngIf="HoTen.touched && HoTen.errors?.pattern">
+            <span>Vui lòng nhập đúng định dạng</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field class="form-group">
+          <input matInput
+          #Email="ngModel" ngModel
+          name="email"
+          placeholder="Email"
+          type="text"
+          class="form-control"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+          <mat-error class="alert alert-danger" *ngIf="Email.errors && Email.touched">
+            <span class="text-text-danger">Email không đúng định dạng</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- SDT -->
+        <mat-form-field class="form-group">
+          <input matInput
+          #SDT="ngModel" ngModel
+          name="sdt"
+          placeholder="Số điện thoại"
+          type="text"
+          class="form-control" required
+          pattern="^((\\+91-?)|0)?[0-9]{10}$"
+          >
+
+           <!-- validation -->
+          <mat-error class="alert alert-danger" *ngIf="SDT.errors?.required && SDT.touched">
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+
+          <mat-error class="alert alert-danger" *ngIf="SDT.errors?.pattern && SDT.touched">
+            <span class="text-text-danger">Số điện thoại không hợp lệ</span>
+          </mat-error>
+        </mat-form-field>
+
+        <button
+        appButton
+        mat-raised-button
+        class="btn my-3"
+        [disabled]="formDKy.invalid"
+        type="submit"
+        (click)="dangKy(formDKy)"
+        >Thêm</button>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,23 @@
+<div class="container my-2" id="list-phim">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <button class="btn mr-2" [ngClass]="{'btn-active': phimDangChieuStatus}" (click)="showNow()">Phim Đang Chiếu</button>
+      <button class="btn" [ngClass]="{'btn-active': !phimDangChieuStatus}" (click)="showComming()">Phim Sắp Chiếu</button>
+    </div>
+  </div>
+
+
+  <!-- phim đang chiếu -->
+  <div class="row my-2">
+    <div class="col-12 now" *ngIf="phimDangChieuStatus, else phimSapChieu">
+      <app-list-phim-dang-chieu></app-list-phim-dang-chieu>
+    </div>
+    <!-- phim sắp chiếu -->
+    <ng-template #phimSapChieu>
+      <div class="col-12 comming">
+        <app-list-phim-sap-chieu></app-list-phim-sap-chieu>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

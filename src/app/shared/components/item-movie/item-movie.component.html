@@ -1,0 +1,15 @@
+<div class="card item-movie mx-0">
+  <img class="card-img-top" [src]="itemMovie.hinhAnh" alt="">
+  <div class="card-body text-center">
+    <div class="card-text-group">
+      <h4 class="card-title">{{itemMovie.tenPhim}}</h4>
+      <p class="card-text">{{itemMovie.moTa | cutString:100}}</p>
+    </div>
+    <div class="btn-group">
+      <button mat-raised-button class="btn btn-trailer" >
+        <a class="trailer" target="_blank" [href]='itemMovie.trailer'>Trailer</a>
+      </button>
+      <button mat-raised-button class="btn btn-chi-tiet" [routerLink]="['/detail-page', itemMovie.maPhim]">Xem chi tiết</button>
+    </div>
+  </div>
+</div>

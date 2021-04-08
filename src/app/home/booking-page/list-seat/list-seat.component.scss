@@ -1,0 +1,36 @@
+.booking-details {
+  text-align: left;
+  h3 {
+    text-align: center;
+  }
+  span {
+    margin-bottom: 20px;
+  }
+}
+.seat {
+  height: 20px;
+  width: 20px;
+  border: none;
+  margin-left: 50px;
+}
+.seat-unavailable {
+  background-color: grey;
+}
+.seat-selected {
+  background-color: rgb(4, 163, 4);
+}
+.seat-available {
+  background-color: hsl(45, 100%, 51%);
+}
+table,
+td,
+th,
+thead,
+tr {
+  border: 1px solid black !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

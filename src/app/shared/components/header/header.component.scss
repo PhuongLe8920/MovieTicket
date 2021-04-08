@@ -1,0 +1,29 @@
+li{
+  display: flex;
+  margin-right: 50px;
+  font-size: 0.8rem;
+}
+a.dang-ky {
+  display: flex;
+  text-decoration: none;
+}
+
+.hello {
+  color: white;
+  text-decoration: none;
+}
+a.nav-link:hover {
+  color: tomato!important;
+}
+button.logout {
+  background-color: transparent;
+  color: rgba(255,255,255,.5);
+  border: none;
+  padding: 0;
+  padding-left: 10px;
+}
+.logout:hover {
+  color: tomato;
+}
+
+

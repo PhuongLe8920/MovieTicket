@@ -1,0 +1,12 @@
+<div  class="container">
+  <div *ngIf="isLoaded, else unloaded"  class="detail-page"  [ngStyle]="{backgroundImage: 'url('+bgImg+')'}">
+    <div class="detail-page-overlay">
+      <app-detail-movie [detail]='detailMovie'></app-detail-movie>
+      <app-show-time></app-show-time>
+    </div>
+
+  </div>
+  <ng-template #unloaded>
+    <app-loader></app-loader>
+  </ng-template>
+</div>

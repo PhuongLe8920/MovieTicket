@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mx-auto">
+      <form #formDN="ngForm" (ngSubmit)="logIn(formDN)" class="dang-nhap-form">
+        <mat-form-field class="full-width form-group">
+          <mat-label>Tài khoản</mat-label>
+          <input matInput ngModel #TaiKhoan="ngModel" type='text' class="form-control" name="taiKhoan" required>
+          <!-- validation -->
+          <div class="alert alert-danger"
+          *ngIf="TaiKhoan.touched && TaiKhoan.errors?.required">
+            <span>Bắt buộc nhập</span>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="full-width form-group">
+          <mat-label>Mật khẩu</mat-label>
+          <input matInput ngModel #MatKhau="ngModel" type="password" class="form-control" name="matKhau" required minlength="3">
+          <!-- validation -->
+          <div class="alert alert-danger"
+          *ngIf="MatKhau.touched && MatKhau.errors?.required">
+            <span>Bắt buộc nhập</span>
+          </div>
+
+          <div class="alert alert-danger"
+          *ngIf="MatKhau.touched && MatKhau.errors?.minlength">
+            <span>Mật khẩu phải từ 3 kí tự</span>
+          </div>
+        </mat-form-field>
+
+        <button appButton mat-stroked-button [disabled]="formDN.invalid" type="submit">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

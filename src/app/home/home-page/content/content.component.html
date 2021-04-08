@@ -1,0 +1,40 @@
+<div class="row my-5">
+  <div class="col-sm-12 text-center">
+    <button
+    class="btn mr-2"
+    (click)="showNews()"
+    [ngClass]="{'btn-active': content ==='news'}"
+    >Góc Điện ảnh</button>
+
+    <button
+    class="btn mr-2"
+    (click)="showReview()"
+    [ngClass]="{'btn-active': content ==='review'}"
+    >Review</button>
+
+    <button
+    class="btn"
+    (click)="showPromotion()"
+    [ngClass]="{'btn-active': content ==='promotion'}"
+    >Khuyến
+      mãi</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" [ngSwitch]="content">
+    <!-- news -->
+    <div class="col-sm-12" *ngSwitchCase="'news'">
+      <app-news></app-news>
+    </div>
+    <!-- review -->
+    <div class="col-sm-12" *ngSwitchCase="'review'">
+      <app-review></app-review>
+    </div>
+    <!-- promotion -->
+    <div class="col-sm-12" *ngSwitchCase="'promotion'">
+      <app-promotion></app-promotion>
+    </div>
+
+  </div>
+</div>
