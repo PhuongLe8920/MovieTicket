@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterContentChecked {
 
   public isMenuCollapsed = true;
 
@@ -34,16 +34,23 @@ export class HeaderComponent implements OnInit {
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // check bất đồng bộ
-    if(localStorage.getItem('user')){
-      const user = JSON.parse(localStorage.getItem('user') as string);
-      if(user){
+    // if(localStorage.getItem('user')){
+    //   const user = JSON.parse(localStorage.getItem('user') as string);
+    //   if(user){
+    //     this.isLogin = true;
+    //     this.userLogin = user;
+    //     console.log(this.isLogin, this.userLogin)
+    //   }
+    // }
+  }
+
+  ngAfterContentChecked(): void {
+    const item = localStorage.getItem('user');
+    if (!this.isLogin && !!item) {
+      const user = JSON.parse(String(localStorage.getItem('user')));
+      if (user) {
         this.isLogin = true;
         this.userLogin = user;
-        console.log(this.isLogin, this.userLogin)
-      }
-      else {
-        this.isLogin = false;
       }
     }
   }

@@ -96,13 +96,10 @@ export class AddUserComponent implements OnInit {
   }
 
 
-  delete(user: any) {
-    console.log(user);
-    this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
-    this.accService.deleteUser(this.id, user).subscribe(response => {
-      console.log(response)
-      this.listUser = [...this.listUser.splice(user)]
-      this.formDK.reset();
+  delete(tk: any) {
+    console.log(tk);
+    this.accService.deleteUser(tk).subscribe(response => {
+      this.listUser = [...this.listUser.splice(tk)]
       console.log(this.listUser);
       return this.listUser;
     })

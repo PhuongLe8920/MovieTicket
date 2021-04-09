@@ -181,15 +181,7 @@
           >Cập nhật</button>
           <button
           appButton
-          #btnDelete
-          [attr.data-taiKhoan]= "item.taiKhoan"
-          [attr.data-matKhau]=  "item.matKhau"
-          [attr.data-email]=  "item.email"
-          [attr.data-hoTen]=  "item.hoTen"
-          [attr.data-sdt]=  "item.soDt"
-          [attr.data-maNhom]= "item.maNhom"
-          [attr.data-maLoai]= "item.maLoaiNguoiDung"
-          class="btn ml-2" (click)="delete(btnDelete)"
+          class="btn ml-2" (click)="delete(item.taiKhoan)"
           >Xoá</button>
         </td>
       </tr>
