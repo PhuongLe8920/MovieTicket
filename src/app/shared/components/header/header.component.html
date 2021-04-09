@@ -1,7 +1,7 @@
 <!--Responsive Navbar: https://ng-bootstrap.github.io/#/components/collapse/examples -->
 
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <div class="container"> -->
+  <nav class="header navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" [routerLink]="'.'">Responsive navbar</a>
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
       &#9776;
@@ -14,10 +14,12 @@
 
         <!-- Đăng ký/Đăng nhập -->
         <li class="nav-item">
-          <a class="dang-ky" *ngIf="!isLogin, else Login">
-            <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
-            <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
-          </a>
+          <ng-container>
+            <a class="dang-ky" *ngIf="!isLogin, else Login">
+              <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
+              <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
+            </a>
+          </ng-container>
           <ng-template #Login >
             <a class="nav-link hello">XIN CHÀO {{userLogin.taiKhoan | uppercase |cutString:8}}</a>
             <a class="nav-link" routerLink="/">
@@ -29,4 +31,4 @@
       </ul>
     </div>
   </nav>
-</div>
+<!-- </div> -->

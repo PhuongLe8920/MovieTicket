@@ -24,6 +24,7 @@ export class LogInPageComponent implements OnInit {
       if(data) {
         localStorage.setItem('user', JSON.stringify(data));
         this.router.navigate(['/'])
+        // window.location.assign('/')
       }
       else {
         alert("Tài khoản hoặc mật khẩu không đúng!")

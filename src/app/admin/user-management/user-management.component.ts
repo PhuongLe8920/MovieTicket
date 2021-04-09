@@ -5,11 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from 'src/app/services/account/account.service';
 
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss']
+  selector: 'app-user-management',
+  templateUrl: './user-management.component.html',
+  styleUrls: ['./user-management.component.scss']
 })
-export class AddUserComponent implements OnInit {
+export class UserManagementComponent implements OnInit {
   @ViewChild('formDangKy') formDK!: NgForm;
 
   listUser: any[] = [];
@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
   item: any;
   isUpdating = false;
 
-  constructor(private accService: AccountService, private router: Router,  private activatedRoute:ActivatedRoute,) { }
+  constructor(private accService: AccountService, private router: Router,  private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getListUser();
@@ -30,13 +30,11 @@ export class AddUserComponent implements OnInit {
     })
   }
 
-
   checkDeactivate() {
     return this.formDK.submitted;
   }
 
   signUp(form: any) {
-    console.log(form)
     const objUser = {
       taiKhoan: form.value.taiKhoan,
       matKhau: form.value.matKhau,
@@ -46,21 +44,21 @@ export class AddUserComponent implements OnInit {
       maLoaiNguoiDung: form.value.maLoaiNguoiDung,
       maNhom: form.value.maNhom,
     }
-    this.listUser.push(objUser);
-    console.log(this.listUser)
-    this.formDK.reset();
-    this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.accService.signUp(objUser).subscribe(data => {
       console.log(data);
-      // if(data) {
-      //   localStorage.setItem('user', JSON.stringify(data));
-      //   this.router.navigate(['/admin/add-user/:id'])
-      // }
-      if(!data) {
+      if(data) {
+        localStorage.setItem('newUser', JSON.stringify(data));
+        this.listUser.push(objUser);
+        alert('Thêm người dùng thành công!')
+      }
+      else {
         alert('Thêm người dùng thất bại!')
       }
     })
+    this.formDK.reset();
   }
+
+
   findIndex = (id: any) =>{
     return this.listUser.findIndex((item)=>{
       return item.id === id;
@@ -78,7 +76,6 @@ export class AddUserComponent implements OnInit {
       maLoaiNguoiDung: form.value.maLoaiNguoiDung,
       maNhom: form.value.maNhom,
     }
-    // this.formDK.reset();
     console.log(objUser)
     this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.accService.updateUser(objUser).subscribe(data => {

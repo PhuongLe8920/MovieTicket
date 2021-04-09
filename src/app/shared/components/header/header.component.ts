@@ -1,13 +1,12 @@
-import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, AfterContentChecked {
-
   public isMenuCollapsed = true;
 
   linksHome = [
@@ -16,32 +15,24 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
     { title: 'MUA VÉ', fragment: '/booking-page' },
     { title: 'LIÊN HỆ', fragment: '/about-page' },
     // {title: 'ĐĂNG KÝ', fragment: '/sign-up-page'}
-
   ];
   active = '1';
 
   /**Đăng ký/ Đăng nhập */
   isLogin = false;
   userLogin = {
-    email: "",
-    hoTen: "",
-    maLoaiNguoiDung: "",
-    maNhom: "",
-    matKhau: "",
-    soDt: "",
-    taiKhoan: ""
-  }
+    email: '',
+    hoTen: '',
+    maLoaiNguoiDung: '',
+    maNhom: '',
+    matKhau: '',
+    soDt: '',
+    taiKhoan: '',
+  };
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // if(localStorage.getItem('user')){
-    //   const user = JSON.parse(localStorage.getItem('user') as string);
-    //   if(user){
-    //     this.isLogin = true;
-    //     this.userLogin = user;
-    //     console.log(this.isLogin, this.userLogin)
-    //   }
-    // }
+
   }
 
   ngAfterContentChecked(): void {
@@ -51,18 +42,17 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
       if (user) {
         this.isLogin = true;
         this.userLogin = user;
+      } else {
+        this.isLogin = false;
       }
     }
   }
 
-
   logOut() {
-    if(localStorage.getItem('user')) {
+    if (localStorage.getItem('user')) {
       const acc = JSON.parse(localStorage.getItem('user') as string);
-      console.log(acc);
       localStorage.removeItem('user');
       this.isLogin = false;
     }
   }
-
 }

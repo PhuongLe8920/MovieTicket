@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin.component';
-import { AddUserComponent } from './add-user/add-user.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { MovieManagementComponent } from './movie-management/movie-management.component';
 
 
 const routes: Routes = [
@@ -24,8 +25,14 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'add-user/:id',
-        component: AddUserComponent,
+        path: 'user-management',
+        component: UserManagementComponent,
+        canActivate: [AuthGuard],
+        canDeactivate: [CanDeactivateGuard]
+      },
+      {
+        path: 'movie-management',
+        component: MovieManagementComponent,
         canActivate: [AuthGuard],
         canDeactivate: [CanDeactivateGuard]
       },

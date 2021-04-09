@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Injectable({
@@ -52,5 +52,35 @@ export class MoviesService {
       'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=' +
       id;
     return this.httpClient.get(api).pipe(tap());
+  }
+
+  addMovie(movie: any): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim';
+    return this.httpClient.post(api, movie).pipe(tap(),
+    catchError(err => {
+      return this.handleErr(err);
+    }))
+  }
+
+  deleteMovie (maPhim: any): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim';
+    return this.httpClient.delete(api,maPhim).pipe(tap(),
+    catchError(err => {
+      return this.handleErr(err);
+    }))
+  }
+
+  handleErr(err: any) {
+    switch(err.status) {
+      case 500:
+        alert(err.error);
+        break;
+      case 401:
+        alert("Vui lòng đăng nhập tài khoản Admin!");
+        break;
+      default:
+        break;
+    }
+    return throwError(err);
   }
 }

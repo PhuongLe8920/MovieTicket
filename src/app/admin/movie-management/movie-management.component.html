@@ -1,0 +1,276 @@
+<div class="container movie-form">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 mx-auto">
+      <h2>Thêm phim</h2>
+      <form #addMovieForm="ngForm" (ngSubmit)="addMovie(addMovieForm)">
+        <!-- Mã Phim -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #MaPhim="ngModel"
+            name="maPhim"
+            ngModel
+            placeholder="Mã phim"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="MaPhim.errors && MaPhim.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Tên Phim -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #TenPhim="ngModel"
+            ngModel
+            name="tenPhim"
+            placeholder="Tên Phim"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="TenPhim.errors?.required && TenPhim.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Bí danh -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #BiDanh="ngModel"
+            ngModel
+            name="biDanh"
+            placeholder="Bí Danh"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="BiDanh.errors?.required && BiDanh.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <!-- Trailer -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #Trailer="ngModel"
+            ngModel
+            name="trailer"
+            placeholder="Trailer"
+            type="text"
+            class="form-control"
+          />
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="Trailer.errors && Trailer.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Hình ảnh -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #HinhAnh="ngModel"
+            ngModel
+            name="hinhAnh"
+            placeholder="Hình Ảnh"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="HinhAnh.errors?.required && HinhAnh.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Mô tả -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #MoTa="ngModel"
+            name="moTa"
+            ngModel
+            placeholder="Mô Tả"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="MoTa.errors && MoTa.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+       <!-- Mã nhóm -->
+       <mat-form-field class="form-group">
+        <input
+          matInput
+          #MaNhom="ngModel"
+          name="maNhom"
+          ngModel
+          placeholder="Mã Nhóm"
+          type="text"
+          class="form-control"
+          required
+        />
+
+        <!-- validation -->
+        <mat-error
+          class="alert alert-danger"
+          *ngIf="MaNhom.errors && MaNhom.touched"
+        >
+          <span class="text-text-danger">Bắt buộc nhập</span>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Ngày khởi chiếu -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          #NgayKhoiChieu="ngModel"
+          name="ngayKhoiChieu"
+          ngModel
+          placeholder="Ngày khởi chiếu"
+          type="text"
+          class="form-control"
+          required
+        />
+
+        <!-- validation -->
+        <mat-error
+          class="alert alert-danger"
+          *ngIf="NgayKhoiChieu.errors && NgayKhoiChieu.touched"
+        >
+          <span class="text-text-danger">Bắt buộc nhập</span>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Đánh giá -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          #DanhGia="ngModel"
+          name="danhGia"
+          ngModel
+          placeholder="Đánh giá"
+          value=0
+          type="text"
+          class="form-control"
+        />
+      </mat-form-field>
+
+        <!-- add-movie -->
+        <div *ngIf="!isUpdating; else updating">
+          <button
+            appButton
+            mat-raised-button
+            class="btn btn-submit"
+            [disabled]="addMovieForm.invalid"
+            type="submit"
+            (click)="addMovie(addMovieForm)"
+          >
+            Thêm
+          </button>
+        </div>
+
+        <!-- update-movie -->
+        <ng-template #updating>
+          <button
+            appButton
+            mat-raised-button
+            class="btn btn-submit"
+            [disabled]="addMovieForm.invalid"
+            type="submit"
+            (click)="updateMovie(addMovieForm)"
+          >
+            Cập nhật
+          </button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+
+  <table table class="table" *ngIf="listMovie.length > 0">
+    <thead>
+      <tr class="text-center">
+        <th>Mã phim</th>
+        <th>Tên phim</th>
+        <th>Bí danh</th>
+        <th>Trailer</th>
+        <th>Hình ảnh</th>
+        <th>Mô tả</th>
+        <th>Mã nhóm</th>
+        <th>Ngày khởi chiếu</th>
+        <th>Đánh giá</th>
+        <th>Cập nhật</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr
+        *ngFor="
+          let item of listMovie | slice: listMovie.length - 10:listMovie.length
+        "
+      >
+        <td>{{ item.maPhim }}</td>
+        <td>{{ item.tenPhim | uppercase | cutString:10}}</td>
+        <td>{{ item.biDanh | cutString:10}}</td>
+        <td>{{ item.trailer | cutString:10}}</td>
+        <td>{{item.hinhAnh | cutString:10}}</td>
+        <td>{{ item.moTa | cutString:10}}</td>
+        <td>{{item.maNhom}}</td>
+        <td>{{ item.ngayKhoiChieu | date:'shortDate'}}</td>
+        <td>{{ item.danhGia }}</td>
+        <td>
+          <button
+            appButton
+            class="btn btn-update"
+            (click)="updateForm(item)"
+          >
+            Cập nhật
+          </button>
+          <button
+            appButton
+            class="btn btn-update ml-2"
+            (click)="deleteMovie(item.maPhim)"
+          >
+            Xoá
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

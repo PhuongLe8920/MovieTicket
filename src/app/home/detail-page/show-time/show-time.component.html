@@ -44,6 +44,7 @@
           </tr>
         </thead>
         <tbody  *ngFor="let item of chiTietPhim">
+          <ng-container>
             <tr *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap && item.thongTinRap.tenCumRap">
               <td>{{item.thongTinRap.tenHeThongRap}}</td>
               <td>{{item.thongTinRap.tenCumRap}}</td>
@@ -53,6 +54,7 @@
                 <a class="booking-btn"routerLink="/booking-page">Chọn ghế</a>
               </button></td>
             </tr>
+          </ng-container>
             <!-- <ng-template #notice>
                 <h2>Không có lịch chiếu ở hệ thống rạp {{showtimes.value}}</h2>
             </ng-template> -->

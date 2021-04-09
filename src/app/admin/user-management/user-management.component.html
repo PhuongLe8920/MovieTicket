@@ -1,0 +1,269 @@
+<div class="container add-user-form ">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mx-auto">
+      <h2>Nhập thông tin người dùng</h2>
+      <form #formDangKy="ngForm" (ngSubmit)="signUp(formDangKy)">
+        <!-- Tài khoản -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #TaiKhoan="ngModel"
+            name="taiKhoan"
+            ngModel
+            placeholder="Tài khoản"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="TaiKhoan.errors && TaiKhoan.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+        <!-- Mật khẩu -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #MatKhau="ngModel"
+            ngModel
+            name="matKhau"
+            placeholder="Mật khẩu"
+            type="password"
+            class="form-control"
+            required
+            minlength="3"
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="MatKhau.errors?.required && MatKhau.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="MatKhau.touched && MatKhau.errors?.minlength"
+          >
+            <span>Mật khẩu phải từ 3 kí tự</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Họ tên -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #HoTen="ngModel"
+            ngModel
+            name="hoTen"
+            placeholder="Họ tên"
+            type="text"
+            class="form-control"
+            required
+            minlength="4"
+            [pattern]="
+              '^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
+              'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+              'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+            "
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="HoTen.errors?.required && HoTen.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="HoTen.touched && HoTen.errors?.minlength"
+          >
+            <span>Họ tên phải từ 4 kí tự</span>
+          </mat-error>
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="HoTen.touched && HoTen.errors?.pattern"
+          >
+            <span>Vui lòng nhập đúng định dạng</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #Email="ngModel"
+            ngModel
+            name="email"
+            placeholder="Email"
+            type="text"
+            class="form-control"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          />
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="Email.errors && Email.touched"
+          >
+            <span class="text-text-danger">Email không đúng định dạng</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- SDT -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #SDT="ngModel"
+            ngModel
+            name="sdt"
+            placeholder="Số điện thoại"
+            type="text"
+            class="form-control"
+            required
+            pattern="^((\\+91-?)|0)?[0-9]{10}$"
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="SDT.errors?.required && SDT.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="SDT.errors?.pattern && SDT.touched"
+          >
+            <span class="text-text-danger">Số điện thoại không hợp lệ</span>
+          </mat-error>
+        </mat-form-field>
+        <!-- Mã nhóm -->
+        <mat-form-field class="form-group">
+          <input
+            matInput
+            #MaNhom="ngModel"
+            name="maNhom"
+            ngModel
+            placeholder="Mã nhóm"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <!-- validation -->
+          <mat-error
+            class="alert alert-danger"
+            *ngIf="MaNhom.errors && MaNhom.touched"
+          >
+            <span class="text-text-danger">Bắt buộc nhập</span>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Loại người dùng -->
+        <div class="form-group">
+          <label style="font-weight: bold">Loại người dùng:</label>
+          <br />
+          <input
+            type="radio"
+            ngModel
+            value="KhachHang"
+            name="maLoaiNguoiDung"
+          />
+          Khách hàng
+          <input type="radio" ngModel value="QuanTri" name="maLoaiNguoiDung" />
+          Quản trị
+        </div>
+
+        <!-- add-user -->
+        <div *ngIf="!isUpdating; else updating">
+          <button
+            appButton
+            mat-raised-button
+            class="btn"
+            [disabled]="formDangKy.invalid"
+            type="submit"
+            (click)="signUp(formDangKy)"
+          >
+            Thêm
+          </button>
+        </div>
+
+        <!-- update-user -->
+        <ng-template #updating>
+          <button
+            appButton
+            mat-raised-button
+            class="btn"
+            [disabled]="formDangKy.invalid"
+            type="submit"
+            (click)="updateUser(formDangKy)"
+          >
+            Cập nhật
+          </button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+
+  <table table class="table" *ngIf="listUser.length > 0">
+    <thead>
+      <tr class="text-center">
+        <th>Tài khoản</th>
+        <th>Họ Tên</th>
+        <th>Email</th>
+        <th>Số điện thoại</th>
+        <!-- <th>Mã nhóm</th> -->
+        <th>Loại người dùng</th>
+        <th>Cập nhật</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr
+        *ngFor="
+          let item of listUser | slice: listUser.length - 10:listUser.length
+        "
+      >
+        <td>{{ item.taiKhoan }}</td>
+        <td>{{ item.hoTen | uppercase }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.soDt }}</td>
+        <!-- <td>{{item.maNhom}}</td> -->
+        <td>{{ item.maLoaiNguoiDung }}</td>
+        <td>
+          <button
+            appButton
+            #btnUpdate
+            [attr.data-taiKhoan]="item.taiKhoan"
+            [attr.data-matKhau]="item.matKhau"
+            [attr.data-email]="item.email"
+            [attr.data-hoTen]="item.hoTen"
+            [attr.data-sdt]="item.soDt"
+            [attr.data-maNhom]="item.maNhom"
+            [attr.data-maLoai]="item.maLoaiNguoiDung"
+            class="btn"
+            (click)="updateForm(btnUpdate)"
+          >
+            Cập nhật
+          </button>
+          <button
+            appButton
+            class="btn ml-2"
+            (click)="delete(item.taiKhoan)"
+          >
+            Xoá
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

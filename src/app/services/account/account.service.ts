@@ -35,7 +35,7 @@ export class AccountService {
   }
 
   deleteUser(tk: string): Observable<any> {
-    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan='+ tk;
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=' + tk;
     return this.httpClient.delete(api).pipe(tap(),
     catchError(err => {
       return this.handleErr(err);
