@@ -32,7 +32,16 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {
-
+    if (localStorage.getItem('user')) {
+      const user = JSON.parse(localStorage.getItem('user') as string);
+      if (user) {
+        this.isLogin = true;
+        this.userLogin = user;
+        console.log(this.isLogin, this.userLogin);
+      } else {
+        this.isLogin = false;
+      }
+    }
   }
 
   ngAfterContentChecked(): void {

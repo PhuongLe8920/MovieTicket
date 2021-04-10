@@ -50,8 +50,13 @@
               <td>{{item.thongTinRap.tenCumRap}}</td>
               <td>{{item.ngayChieuGioChieu | date: 'shortDate'}}</td>
               <td>{{item.ngayChieuGioChieu | date:'mediumTime'}}</td>
-              <td><button class="ml-5">
-                <a class="booking-btn"routerLink="/booking-page">Chọn ghế</a>
+              <td>
+                <button
+                appBtnEdit
+                class="booking-btn"
+                (click)='chonGhe(item.maLichChieu)'
+                >
+                <a>Chọn ghế</a>
               </button></td>
             </tr>
           </ng-container>

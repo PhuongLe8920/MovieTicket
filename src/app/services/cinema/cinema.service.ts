@@ -20,4 +20,9 @@ export class CinemaService {
     return this.httpClient.get(api).pipe(tap())
   }
 
+  layDSPhongVe (id: any): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=' + id;
+    return this.httpClient.get(api).pipe(tap())
+  }
+
 }

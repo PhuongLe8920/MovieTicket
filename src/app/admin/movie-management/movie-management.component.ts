@@ -54,6 +54,13 @@ export class MovieManagementComponent implements OnInit {
     this.addMovieForm.reset();
   }
 
+  uploadImg () {
+    this.movieSV.uploadImg().subscribe(data => {
+      // this.frm = data;
+      console.log(data)
+    })
+  }
+
   updateMovie(movie:any) {
 
   }

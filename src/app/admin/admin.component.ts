@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit, AfterContentChecked {
+export class AdminComponent implements OnInit {
 
   constructor(private router: Router) { }
   isLogin = false;
@@ -21,15 +21,12 @@ export class AdminComponent implements OnInit, AfterContentChecked {
   }
 
   ngOnInit(): void {
-  }
-
-  ngAfterContentChecked():void {
-    const item = localStorage.getItem('user');
-    if(!this.isLogin && !!item){
-      const user = JSON.parse(String(localStorage.getItem('user')));
+    if(localStorage.getItem('user')){
+      const user = JSON.parse(localStorage.getItem('user') as string);
+      console.log(user.maLoaiNguoiDung);
       if(user.maLoaiNguoiDung === "QuanTri"){
-        this.isLogin = true;
         this.router.navigate(['admin/dash-board']);
+        this.isLogin = true;
       }
       else {
         alert('Không đủ quyền truy cập!')

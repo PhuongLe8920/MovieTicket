@@ -193,7 +193,7 @@
       </mat-form-field>
 
         <!-- add-movie -->
-        <div *ngIf="!isUpdating; else updating">
+        <ng-container *ngIf="!isUpdating; else updating">
           <button
             appButton
             mat-raised-button
@@ -204,7 +204,7 @@
           >
             Thêm
           </button>
-        </div>
+        </ng-container>
 
         <!-- update-movie -->
         <ng-template #updating>
@@ -220,6 +220,17 @@
           </button>
         </ng-template>
       </form>
+      <ng-container>
+        <button
+        appButton
+        mat-raised-button
+        class="btn btn-submit"
+        type="submit"
+        (click)="uploadImg()"
+      >
+        Upload hình
+      </button>
+      </ng-container>
     </div>
   </div>
 
@@ -255,14 +266,14 @@
         <td>{{ item.danhGia }}</td>
         <td>
           <button
-            appButton
+            appBtnEdit
             class="btn btn-update"
             (click)="updateForm(item)"
           >
             Cập nhật
           </button>
           <button
-            appButton
+            appBtnEdit
             class="btn btn-update ml-2"
             (click)="deleteMovie(item.maPhim)"
           >

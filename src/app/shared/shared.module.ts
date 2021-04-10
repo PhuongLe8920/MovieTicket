@@ -12,6 +12,8 @@ import { ButtonDirective } from './directives/button.directive';
 import { CutStringPipe } from './custom-pipes/cut-string.pipe';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MaterialModule } from '../material/material.module';
+import { BtnEditDirective } from './directives/btn-edit.directive';
+
 
 @NgModule({
   imports: [CommonModule, RouterModule, NgbModule, FontAwesomeModule, MaterialModule],
@@ -24,6 +26,8 @@ import { MaterialModule } from '../material/material.module';
     ButtonDirective,
     CutStringPipe,
     LoaderComponent,
+    BtnEditDirective,
+
   ],
 
   exports: [
@@ -38,7 +42,9 @@ import { MaterialModule } from '../material/material.module';
     FontAwesomeModule,
     ButtonDirective,
     CutStringPipe,
-    LoaderComponent
+    LoaderComponent,
+    BtnEditDirective,
+
   ],
 })
 export class SharedModule {}

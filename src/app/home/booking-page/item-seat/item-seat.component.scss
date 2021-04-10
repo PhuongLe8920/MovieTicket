@@ -2,4 +2,10 @@ button {
   width: 50px;
   height: 40px;
   border: solid hsl(45, 100%, 51%);
+  margin: none;
+  padding: none;
+}
+.seat-unavailable {
+  background-color: grey;
+  pointer-events: none;
 }

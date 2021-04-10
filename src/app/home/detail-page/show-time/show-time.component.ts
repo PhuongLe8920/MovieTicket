@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CinemaService } from 'src/app/services/cinema/cinema.service';
 import { LoaderService } from 'src/app/services/loader/loader.service';
 import { MoviesService } from 'src/app/services/movies/movies.service';
@@ -21,7 +21,8 @@ export class ShowTimeComponent implements OnInit {
     private cinemaSV: CinemaService,
     private activatedRoute:ActivatedRoute,
     private movieService: MoviesService,
-    private loaderSV: LoaderService) { }
+    private loaderSV: LoaderService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.cinemaSV.getDSRap().subscribe((_cinema) => {
@@ -39,13 +40,20 @@ export class ShowTimeComponent implements OnInit {
         return _item.thongTinRap;
       })
       this.logo = this.thongTinRap.logo;
-      console.log(this.thongTinRap);
     })
 }
 
   changeValue(tenHeThongRap: string) {
     this.dkSwitch = tenHeThongRap;
     console.log(this.dkSwitch)
+  }
+
+  chonGhe (maLichChieu: any) {
+    console.log(maLichChieu)
+    this.cinemaSV.layDSPhongVe(maLichChieu).subscribe(response => {
+      this.router.navigate(['/booking-page/', maLichChieu])
+      console.log(response)
+    })
   }
 
 }

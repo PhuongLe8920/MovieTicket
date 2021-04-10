@@ -1,7 +1,7 @@
 <!-- https://www.positronx.io/how-to-integrate-owl-carousel-2-in-angular/ -->
 
   <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide *ngFor='let item of listMovieNow | slice:0:20'>
+      <ng-template carouselSlide *ngFor='let item of listMovieNow  | slice:listMovieNow.length-20:listMovieNow.length'>
         <app-item-movie [itemMovie]='item' ></app-item-movie>
       </ng-template>
   </owl-carousel-o>

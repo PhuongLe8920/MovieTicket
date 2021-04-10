@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Injectable({
@@ -57,6 +57,19 @@ export class MoviesService {
   addMovie(movie: any): Observable<any> {
     const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim';
     return this.httpClient.post(api, movie).pipe(tap(),
+    catchError(err => {
+      return this.handleErr(err);
+    }))
+  }
+
+  // fix lỗi upload
+  uploadImg (): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh';
+    var frm = new FormData();
+    frm.append('file','assets/img/1990.jpg');
+    frm.append('tenPhim','1990')
+    frm.append('manhom','GP05')
+    return this.httpClient.post(api, frm).pipe(tap(),
     catchError(err => {
       return this.handleErr(err);
     }))

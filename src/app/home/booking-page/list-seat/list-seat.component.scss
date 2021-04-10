@@ -6,6 +6,11 @@
   span {
     margin-bottom: 20px;
   }
+  .total {
+    p {
+      font-size: 1rem;
+    }
+  }
 }
 .seat {
   height: 20px;
@@ -33,4 +38,8 @@ tr {
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.hide-template {
+  text-align: left;
 }

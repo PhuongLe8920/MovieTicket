@@ -240,7 +240,7 @@
         <td>{{ item.maLoaiNguoiDung }}</td>
         <td>
           <button
-            appButton
+            appBtnEdit
             #btnUpdate
             [attr.data-taiKhoan]="item.taiKhoan"
             [attr.data-matKhau]="item.matKhau"
@@ -255,7 +255,7 @@
             Cập nhật
           </button>
           <button
-            appButton
+            appBtnEdit
             class="btn ml-2"
             (click)="delete(item.taiKhoan)"
           >

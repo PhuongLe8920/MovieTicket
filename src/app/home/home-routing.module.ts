@@ -29,7 +29,7 @@ const routes: Routes = [
         component: AboutPageComponent,
       },
       {
-        path: 'booking-page',
+        path: 'booking-page/:id',
         component: BookingPageComponent,
         canActivate: [CanActivateGuard]
       },
