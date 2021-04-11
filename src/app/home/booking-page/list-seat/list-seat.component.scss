@@ -1,4 +1,20 @@
+.movie-info {
+  background-image: url(https://tinyearth.wisc.edu/wp-content/uploads/2018/06/iStock-697020460.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  h3 {
+    margin: 10px;
+  };
+}
 .booking-details {
+  background-color: #0a2029f2;
+  border-radius: 5px;
+  color: white;
   text-align: left;
   h3 {
     text-align: center;
@@ -27,19 +43,26 @@
 .seat-available {
   background-color: hsl(45, 100%, 51%);
 }
-table,
-td,
-th,
-thead,
-tr {
-  border: 1px solid black !important;
-}
 
+// table
 table {
-  width: 100%;
-  border-collapse: collapse;
+  color: white;
+  width: 90%;
+  border-collapse:separate;
+  margin-left: 30px;
+  thead {
+    background-color: #0a2029f2;
+    color: white;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
 }
 
-.hide-template {
-  text-align: left;
-}
