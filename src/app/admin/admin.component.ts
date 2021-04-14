@@ -25,7 +25,7 @@ export class AdminComponent implements OnInit {
       const user = JSON.parse(localStorage.getItem('user') as string);
       console.log(user.maLoaiNguoiDung);
       if(user.maLoaiNguoiDung === "QuanTri"){
-        this.router.navigate(['admin/dash-board']);
+        this.router.navigate(['admin/movie-management']);
         this.isLogin = true;
       }
       else {

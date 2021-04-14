@@ -2,6 +2,14 @@
   position: fixed;
   z-index: 100;
   width: 100%;
+  background-color: hsla(197, 67%, 10%, 0.95);
+  .header-logo {
+    padding: 0px;
+    img {
+      width: 60px;
+      height: 40px;
+    }
+  }
 }
 
 li{

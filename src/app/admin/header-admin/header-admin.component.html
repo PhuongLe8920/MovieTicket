@@ -1,40 +1,62 @@
-<nav class="header navbar navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">ADMIN</a>
-  <!-- <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-      aria-expanded="false" aria-label="Toggle navigation"></button> -->
-      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-        &#9776;
-      </button>
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/admin/dash-board">DASH BOARD<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/user-management']">QUẢN LÝ TÀI KHOẢN</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/movie-management']">QUẢN LÝ PHIM</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/">TRANG CHỦ</a>
-        </li>
-        <!-- Đăng ký/Đăng nhập -->
-        <li class="nav-item">
-          <ng-container>
-            <a class="dang-ky" *ngIf="!isLogin, else Login">
-              <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
-              <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
-            </a>
-          </ng-container>
-          <ng-template #Login >
-            <a class="nav-link hello">XIN CHÀO {{userLogin.taiKhoan | uppercase |cutString:8}}</a>
-            <a class="nav-link" routerLink="/">
-              <button class="logout" type="submit" (click)="logOut()">THOÁT</button>
-            </a>
-          </ng-template>
-        </li>
-        <!-- End---Đăng ký/Đăng nhập -->
-      </ul>
+<nav class="header navbar navbar-expand-lg">
+  <a class="navbar-brand header-logo left" href="/admin"
+    ><img src="./../../../assets/img/logo.png"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="isMenuCollapsed = !isMenuCollapsed"
+  >
+    &#9776;
+  </button>
+  <div
+    [ngbCollapse]="isMenuCollapsed"
+    class="collapse navbar-collapse"
+    id="collapsibleNavId"
+  >
+    <ul class="navbar-nav me-auto mb-lg-0 center">
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/dash-board"
+          >DASH BOARD<span class="sr-only">(current)</span></a
+        >
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/movie-management']"
+          >QUẢN LÝ PHIM</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/user-management']"
+          >QUẢN LÝ TÀI KHOẢN</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">VỀ TRANG CHỦ</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav me-auto mb-lg-0 right">
+      <!-- Đăng ký/Đăng nhập -->
+      <li class="nav-item">
+        <ng-container>
+          <a class="dang-ky" *ngIf="!isLogin; else Login">
+            <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
+            <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
+          </a>
+        </ng-container>
+        <ng-template #Login>
+          <a class="nav-link hello"
+            >XIN CHÀO {{ userLogin.taiKhoan | uppercase | cutString: 8 }}</a
+          >
+          <a class="nav-link" routerLink="/">
+            <button class="logout" type="submit" (click)="logOut()">
+              THOÁT
+            </button>
+          </a>
+        </ng-template>
+      </li>
+      <!-- End---Đăng ký/Đăng nhập -->
+    </ul>
   </div>
 </nav>

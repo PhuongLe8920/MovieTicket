@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       console.log(data)
       if(data) {
         localStorage.setItem('user', JSON.stringify(data));
-        this.router.navigate(['/admin/dash-board'])
+        this.router.navigate(['/admin/movie-management'])
       }
       else {
         alert("Đăng nhập thất bại!")

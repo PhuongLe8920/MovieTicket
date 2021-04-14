@@ -15,8 +15,18 @@ export class CinemaService {
     return this.httpClient.get(api).pipe(tap())
   }
 
+  getDSCumRap (maRap: string): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=' + maRap;
+    return this.httpClient.get(api).pipe(tap())
+  }
+
   getChiTietRap(id: any): Observable<any> {
     const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim='+ id;
+    return this.httpClient.get(api).pipe(tap())
+  }
+
+  layLichChieuRap (maRap: string, GP: string): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap='+ maRap+'&maNhom=GP01';
     return this.httpClient.get(api).pipe(tap())
   }
 

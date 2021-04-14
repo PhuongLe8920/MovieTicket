@@ -1,7 +1,11 @@
-label {
-  font-size: 15px;
+.login {
+  padding-top: 30px;
+  label {
+    font-size: 15px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
 }
-mat-form-field {
-  width: 100%;
-}
+
 

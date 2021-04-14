@@ -2,7 +2,7 @@
   <h4>LỊCH CHIẾU</h4>
 
   <div class="showtimes-detail">
-    <!-- <ul>
+    <ul>
       <li class="showtimes-day">
         <a>Thứ Sáu</a>
       </li>
@@ -24,7 +24,7 @@
       <li class="showtimes-day">
         <a>Thứ Năm</a>
       </li>
-    </ul> -->
+    </ul>
 
     <select class="showtimes-options" #showtimes  (change)="changeValue(showtimes.value)">
       <option *ngFor="let item of listCinema" [value]="item.tenHeThongRap">
@@ -33,7 +33,7 @@
     </select>
 
     <div class="container thong-tin-rap">
-      <table>
+      <table table>
         <thead>
           <tr>
             <th>Hệ thống rạp</th>
@@ -43,9 +43,9 @@
             <th>Chọn ghế</th>
           </tr>
         </thead>
-        <tbody  *ngFor="let item of chiTietPhim">
-          <ng-container>
-            <tr *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap && item.thongTinRap.tenCumRap">
+        <tbody>
+          <tr   *ngFor="let item of chiTietPhim">
+            <ng-container *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap && item.thongTinRap.tenCumRap">
               <td>{{item.thongTinRap.tenHeThongRap}}</td>
               <td>{{item.thongTinRap.tenCumRap}}</td>
               <td>{{item.ngayChieuGioChieu | date: 'shortDate'}}</td>
@@ -58,8 +58,8 @@
                 >
                 <a>Chọn ghế</a>
               </button></td>
-            </tr>
           </ng-container>
+          </tr>
             <!-- <ng-template #notice>
                 <h2>Không có lịch chiếu ở hệ thống rạp {{showtimes.value}}</h2>
             </ng-template> -->

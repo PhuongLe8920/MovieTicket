@@ -1,4 +1,4 @@
-<div class="container add-user-form ">
+<div class="container user-form">
   <div class="row">
     <div class="col-sm-12 col-md-6 mx-auto">
       <h2>Nhập thông tin người dùng</h2>
@@ -214,9 +214,10 @@
     </div>
   </div>
 
-  <table table class="table" *ngIf="listUser.length > 0">
+  <table table *ngIf="listUser.length > 0">
     <thead>
       <tr class="text-center">
+        <th>STT</th>
         <th>Tài khoản</th>
         <th>Họ Tên</th>
         <th>Email</th>
@@ -227,11 +228,8 @@
       </tr>
     </thead>
     <tbody class="text-center">
-      <tr
-        *ngFor="
-          let item of listUser | slice: listUser.length - 10:listUser.length
-        "
-      >
+      <tr *ngFor="let item of listUser; let stt = index">
+        <td>{{ stt + 1 }}</td>
         <td>{{ item.taiKhoan }}</td>
         <td>{{ item.hoTen | uppercase }}</td>
         <td>{{ item.email }}</td>
@@ -254,11 +252,7 @@
           >
             Cập nhật
           </button>
-          <button
-            appBtnEdit
-            class="btn ml-2"
-            (click)="delete(item.taiKhoan)"
-          >
+          <button appBtnEdit class="btn ml-2" (click)="delete(item.taiKhoan)">
             Xoá
           </button>
         </td>
@@ -266,4 +260,3 @@
     </tbody>
   </table>
 </div>
-

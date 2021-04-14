@@ -2,32 +2,51 @@
   position: fixed;
   z-index: 100;
   width: 100%;
+  background-color: hsla(197, 61%, 10%, 0.95);
+  padding: none;
+  .header-logo.left {
+    padding: 0px;
+    img {
+      width: 60px;
+      height: 40px;
+    }
+  }
+  .center ul {
+    margin-bottom: 0px;
+  }
+  li{
+    display: flex;
+    margin-right: 50px;
+    font-size: 0.8rem;
+  }
+
+  a, a.dang-ky {
+    color: whitesmoke;
+    display: flex;
+    text-decoration: none;
+  }
+
+  .hello {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  a.nav-link:hover {
+    color: tomato!important;
+  }
+  button.logout {
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    padding: 0;
+    padding-left: 10px;
+  }
+  .logout:hover {
+    color: tomato;
+  }
 }
 
-li{
-  display: flex;
-  margin-right: 50px;
-  font-size: 0.8rem;
-}
-a.dang-ky {
-  display: flex;
-  text-decoration: none;
-}
-
-.hello {
-  color: white;
-  text-decoration: none;
-}
-a.nav-link:hover {
-  color: tomato!important;
-}
-button.logout {
-  background-color: transparent;
-  color: rgba(255,255,255,.5);
-  border: none;
-  padding: 0;
-  padding-left: 10px;
-}
-.logout:hover {
-  color: tomato;
+@media screen and (max-width: 768px) {
+  .center ul {
+    margin-bottom: 0px;
+  }
 }

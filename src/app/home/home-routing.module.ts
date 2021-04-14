@@ -7,7 +7,6 @@ import { BookingPageComponent } from './booking-page/booking-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home.component';
-import { ListMoviePageComponent } from './list-movie-page/list-movie-page.component';
 import { LogInPageComponent } from './log-in-page/log-in-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
@@ -20,10 +19,10 @@ const routes: Routes = [
         path: '',
         component: HomePageComponent,
       },
-      {
-        path: 'list-movie-page',
-        component: ListMoviePageComponent,
-      },
+      // {
+      //   path: 'list-movie-page',
+      //   component: ListMoviePageComponent,
+      // },
       {
         path: 'about-page',
         component: AboutPageComponent,
