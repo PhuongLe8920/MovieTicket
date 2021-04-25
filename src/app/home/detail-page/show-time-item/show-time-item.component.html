@@ -1,0 +1,8 @@
+<div class="card text-left show-time">
+  <div class="card-body show-time-body">
+    <a [routerLink]="['/booking-page', showtime.maLichChieu]">
+      <p class="my-0">{{showtime.ngayChieuGioChieu | date:'d/M/yy'}}</p>
+      <p class="my-0">{{showtime.ngayChieuGioChieu | date:'h:mm a'}}</p>
+    </a>
+  </div>
+</div>

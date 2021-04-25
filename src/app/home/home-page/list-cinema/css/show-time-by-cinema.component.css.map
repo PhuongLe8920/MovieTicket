@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,KAAK,EAAE,KAAK;CAgBb;;AAjBD,AAEE,UAFQ,CAER,eAAe,AAAA,UAAU,CAAC;EACxB,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,0BAA0B;EAC5C,OAAO,EAAE,GAAG;CAUb;;AAhBH,AAOI,UAPM,CAER,eAAe,AAAA,UAAU,CAKvB,CAAC,CAAC;EACA,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,IAAI;CAChB;;AAXL,AAYI,UAZM,CAER,eAAe,AAAA,UAAU,AAUtB,MAAM,CAAC,CAAC,CAAC;EACR,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,OAAO;CAChB",
+    "sources": [
+        "../show-time-by-cinema/show-time-by-cinema.component.scss"
+    ],
+    "names": [],
+    "file": "show-time-by-cinema.component.css"
+}

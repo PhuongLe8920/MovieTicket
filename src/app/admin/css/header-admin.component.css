@@ -1,0 +1,64 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(10, 32, 41, 0.95);
+  padding: none;
+}
+
+.header .header-logo.left {
+  padding: 0px;
+}
+
+.header .header-logo.left img {
+  width: 60px;
+  height: 40px;
+}
+
+.header .center ul {
+  margin-bottom: 0px;
+}
+
+.header li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 50px;
+  font-size: 0.8rem;
+}
+
+.header a, .header a.dang-ky {
+  color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
+.header .hello {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.header a.nav-link:hover {
+  color: tomato !important;
+}
+
+.header button.logout {
+  background-color: transparent;
+  color: whitesmoke;
+  border: none;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.header .logout:hover {
+  color: tomato;
+}
+
+@media screen and (max-width: 768px) {
+  .center ul {
+    margin-bottom: 0px;
+  }
+}
+/*# sourceMappingURL=header-admin.component.css.map */

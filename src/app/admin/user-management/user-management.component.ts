@@ -25,7 +25,6 @@ export class UserManagementComponent implements OnInit {
 
   getListUser() {
     this.accService.getListUser().subscribe((result: any) => {
-      console.log(result)
       this.listUser = result;
     })
   }
@@ -56,6 +55,7 @@ export class UserManagementComponent implements OnInit {
       }
     })
     this.formDK.reset();
+    this.getListUser();
   }
 
 
@@ -66,7 +66,6 @@ export class UserManagementComponent implements OnInit {
   }
 
   updateUser(form: any) {
-    console.log(form)
     const objUser = {
       taiKhoan: form.value.taiKhoan,
       matKhau: form.value.matKhau,
@@ -76,19 +75,10 @@ export class UserManagementComponent implements OnInit {
       maLoaiNguoiDung: form.value.maLoaiNguoiDung,
       maNhom: form.value.maNhom,
     }
-    console.log(objUser)
-    this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    // console.log(objUser)
     this.accService.updateUser(objUser).subscribe(data => {
-      const index = this.findIndex(objUser);
-      console.log(index, data);
-      this.listUser.splice(this.listUser[index])
-      this.listUser = [...this.listUser,data];
-      // if(index !== -1) {
-      //   this.listUser[index] = data;
-      // }
-      // else {
-      //   alert('Cập nhật người dùng thất bại!')
-      // }
+      // console.log(data);
+      this.getListUser();
     })
   }
 
@@ -100,10 +90,11 @@ export class UserManagementComponent implements OnInit {
       console.log(this.listUser);
       return this.listUser;
     })
+    this.getListUser();
   }
 
   updateForm(user:any) {
-    console.log(user)
+    // console.log(user)
     this.isUpdating = true;
     let matKhau = user.getAttribute('data-matKhau')
     let taiKhoan = user.getAttribute('data-taiKhoan')

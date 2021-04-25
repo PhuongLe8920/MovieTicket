@@ -43,7 +43,7 @@ export class ListSeatComponent implements OnInit {
   ngOnInit(): void {
     this.maLichChieu = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.cinemaSV.layDSPhongVe(this.maLichChieu).subscribe(response => {
-      console.log(response)
+      // console.log(response)
       this.thongTinPhim = response.thongTinPhim;
       this.listSeat = response.danhSachGhe;
       response.danhSachGhe.map((item: any) => {
@@ -54,19 +54,18 @@ export class ListSeatComponent implements OnInit {
           this.unavailableSeat++
         }
       })
-      console.log(this.listSeat)
+      // console.log(this.listSeat)
     })
-
   }
 
   _bookSeat(status: boolean, seat: any) {
-    console.log(status, seat);
+    // console.log(status, seat);
     if (status) {
       this.selectedSeat++;
       this.availableSeat--;
       this.listSelectedSeat.push(seat);
       this.priceArray.push(seat.giaVe);
-      console.log(this.listSelectedSeat)
+      // console.log(this.listSelectedSeat)
     }
     else {
       this.selectedSeat--;
@@ -77,9 +76,8 @@ export class ListSeatComponent implements OnInit {
           this.priceArray.splice(parseInt(index),1)
         }
       }
-      console.log(this.listSelectedSeat)
-      console.log(this.priceArray)
     }
+    // console.log(this.listSelectedSeat)
   }
 
   totalAmount () {
@@ -89,21 +87,16 @@ export class ListSeatComponent implements OnInit {
 
   datVe() {
     const acc = JSON.parse(localStorage.getItem("user") as string);
-    const objVe = {
-      maGhe: '',
-      giaVe: ''
-    }
     this.listSelectedSeat.map((item: any) => {
-      objVe.maGhe = item.maGhe;
-      objVe.giaVe = item.giaVe;
-       return this.danhSachVe.push(objVe)
+       return this.danhSachVe.push(item)
     })
+    // console.log(this.danhSachVe)
     const objDatVe = {
       maLichChieu: this.maLichChieu,
       danhSachVe: this.danhSachVe,
       taiKhoanNguoiDung: acc.taiKhoan,
     }
-    console.log(objDatVe)
+    // console.log(objDatVe)
 
     // fix alert?
     this.cinemaSV.datVe(objDatVe).subscribe(data => {
@@ -111,12 +104,10 @@ export class ListSeatComponent implements OnInit {
         alert ("Đặt vé thành công!")
       }
     })
-
-    this.listSelectedSeat.map((item: any) => {
+    this.listSelectedSeat.map((item:any)=>{
       item.daDat = true;
-      return this.listSelectedSeat;
     })
+    this.listSelectedSeat.splice(0,this.listSelectedSeat.length);
+    this.danhSachVe.splice(0,this.danhSachVe.length);
   }
-
-
 }

@@ -1,0 +1,105 @@
+.movie-form {
+  padding-top: 70px;
+  margin-bottom: 30px;
+}
+
+.movie-form mat-form-field {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.movie-form .form-group.loai-nguoi-dung {
+  margin-top: 20px;
+}
+
+.movie-form table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5px;
+  overflow-x: hidden;
+  font-size: 12px;
+}
+
+.movie-form table thead {
+  background-color: #0a2029f2;
+  color: white;
+  display: table;
+  width: calc(100% - 5px);
+  table-layout: fixed;
+  height: 40px;
+}
+
+.movie-form table tbody {
+  display: block;
+  max-height: 300px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.movie-form table tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 40px;
+}
+
+.movie-form table td, .movie-form table th {
+  overflow-wrap: break-word;
+  vertical-align: middle;
+  width: auto;
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 2px;
+  font-weight: normal;
+}
+
+.movie-form table button.btn-submit {
+  display: block;
+  margin-top: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #949393;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 425px) {
+  .movie-form mat-form-field {
+    width: 100%;
+  }
+  .movie-form table.table td .btn.btn-update, .movie-form table.table th .btn.btn-update {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .movie-form button.btn-submit {
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movie-form mat-form-field {
+    width: 100%;
+  }
+  .movie-form table.table td .btn.btn-update, .movie-form table.table th .btn.btn-update {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .movie-form button.btn-submit {
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movie-form table.table td .btn.btn-update, .movie-form table.table th .btn.btn-update {
+    font-size: 12px;
+    padding: 3px;
+  }
+}
+/*# sourceMappingURL=movie-management.component.css.map */

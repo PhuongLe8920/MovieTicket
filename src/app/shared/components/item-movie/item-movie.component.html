@@ -1,5 +1,8 @@
 <div class="card item-movie mx-0">
-  <img class="card-img-top" [src]="itemMovie.hinhAnh" alt="">
+  <div class="card-img-top">
+    <img [src]="itemMovie.hinhAnh" alt="">
+    <div class="card-img-overlay"></div>
+  </div>
   <div class="card-body text-center">
     <div class="card-text-group">
       <h4 class="card-title">{{itemMovie.tenPhim}}</h4>

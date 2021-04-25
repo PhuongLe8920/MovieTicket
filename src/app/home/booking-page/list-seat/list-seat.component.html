@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 mx-auto my-5 px-4">
+<div class="container text-center">
+  <div class="list-seat mx-auto">
       <app-item-seat *ngFor="let item of listSeat" [seat]='item' (emitStatus)="_bookSeat($event, item)">
       </app-item-seat>
+  </div>
       <hr>
           <div class="movie-info">
             <h3>Phim: {{this.thongTinPhim.tenPhim | uppercase}}</h3>
@@ -73,6 +73,6 @@
           </div>
         </div>
       </ng-container>
-    </div>
-  </div>
+
+
 </div>

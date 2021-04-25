@@ -1,0 +1,15 @@
+.dang-nhap-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 60px auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=log-in-page.component.css.map */

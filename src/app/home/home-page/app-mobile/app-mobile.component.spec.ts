@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashBoardComponent } from './dash-board.component';
+import { AppMobileComponent } from './app-mobile.component';
 
-describe('DashBoardComponent', () => {
-  let component: DashBoardComponent;
-  let fixture: ComponentFixture<DashBoardComponent>;
+describe('AppMobileComponent', () => {
+  let component: AppMobileComponent;
+  let fixture: ComponentFixture<AppMobileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashBoardComponent ]
+      declarations: [ AppMobileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashBoardComponent);
+    fixture = TestBed.createComponent(AppMobileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee, faFootballBall, faCookie, faFilm } from '@fortawesome/free-solid-svg-icons';
+import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,10 +13,13 @@ export class FooterComponent implements OnInit {
   faFootballBall = faFootballBall;
   faCookie = faCookie;
   faFilm = faFilm;
+  listIcon:any []=[];
 
-  constructor() { }
+  constructor(private contentSV: ContentService) { }
 
   ngOnInit(): void {
+    this.listIcon = this.contentSV.listIcon;
+    console.log(this.listIcon);
   }
 
 }

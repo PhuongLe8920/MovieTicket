@@ -1,71 +1,119 @@
-<div class="showtimes" id="showtimes">
-  <h4>LỊCH CHIẾU</h4>
+<div class="container showtimes" id="showtimes">
+  <div class="row showtimes-detail">
+    <div class="col-12">
+      <h4>LỊCH CHIẾU</h4>
+      <ul>
+        <li class="showtimes-day">
+          <a>Thứ Sáu</a>
+        </li>
+        <li class="showtimes-day weekend">
+          <a>Thứ Bảy</a>
+        </li>
+        <li class="showtimes-day weekend">
+          <a>Chủ Nhật</a>
+        </li>
+        <li class="showtimes-day">
+          <a>Thứ Hai</a>
+        </li>
+        <li class="showtimes-day">
+          <a>Thứ Ba</a>
+        </li>
+        <li class="showtimes-day">
+          <a>Thứ Tư</a>
+        </li>
+        <li class="showtimes-day">
+          <a>Thứ Năm</a>
+        </li>
+      </ul>
+    </div>
+    <!--  -->
+    <div class="col-12">
+      <!-- <select
+        class="showtimes-options"
+        #showtimes
+        (change)="changeValue(showtimes.value)"
+      >
+        <option *ngFor="let item of listCinema" [value]="item.tenHeThongRap">
+          <span>{{ item.tenHeThongRap }}</span>
+        </option>
+      </select>
 
-  <div class="showtimes-detail">
-    <ul>
-      <li class="showtimes-day">
-        <a>Thứ Sáu</a>
-      </li>
-      <li class="showtimes-day weekend">
-        <a>Thứ Bảy</a>
-      </li>
-      <li class="showtimes-day weekend">
-        <a>Chủ Nhật</a>
-      </li>
-      <li class="showtimes-day">
-        <a>Thứ Hai</a>
-      </li>
-      <li class="showtimes-day">
-        <a>Thứ Ba</a>
-      </li>
-      <li class="showtimes-day">
-        <a>Thứ Tư</a>
-      </li>
-      <li class="showtimes-day">
-        <a>Thứ Năm</a>
-      </li>
-    </ul>
+      <div class="thong-tin-rap">
+        <table table>
+          <thead>
+            <tr>
+              <th>Hệ thống rạp</th>
+              <th>Cụm rạp</th>
+              <th>Ngày chiếu</th>
+              <th>Giờ chiếu</th>
+              <th>Chọn ghế</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr   *ngFor="let item of chiTietPhim">
+              <ng-container *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap && item.thongTinRap.tenCumRap">
+                <td>{{item.thongTinRap.tenHeThongRap}}</td>
+                <td>{{item.thongTinRap.tenCumRap}}</td>
+                <td>{{item.ngayChieuGioChieu | date: 'shortDate'}}</td>
+                <td>{{item.ngayChieuGioChieu | date:'mediumTime'}}</td>
+                <td>
+                  <button
+                  appBtnEdit
+                  class="booking-btn"
+                  (click)='chonGhe(item.maLichChieu)'
+                  >
+                  <a>Chọn ghế</a>
+                </button></td>
+            </ng-container>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <!-- </div> -->
+      <!--  -->
 
-    <select class="showtimes-options" #showtimes  (change)="changeValue(showtimes.value)">
-      <option *ngFor="let item of listCinema" [value]="item.tenHeThongRap">
-        <span>{{item.tenHeThongRap}}</span>
-      </option>
-    </select>
+      <!-- list rạp -->
+      <div class="container list-cinema">
+        <div class="logo-wrap">
+          <div *ngFor="let item of listCinema">
+            <a (click)="changeValue(item.maHeThongRap)">
+              <img [src]="item.logo" />
+              <p>{{ item.tenHeThongRap }}</p>
+            </a>
+          </div>
+        </div>
 
-    <div class="container thong-tin-rap">
-      <table table>
-        <thead>
-          <tr>
-            <th>Hệ thống rạp</th>
-            <th>Cụm rạp</th>
-            <th>Ngày chiếu</th>
-            <th>Giờ chiếu</th>
-            <th>Chọn ghế</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr   *ngFor="let item of chiTietPhim">
-            <ng-container *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap && item.thongTinRap.tenCumRap">
-              <td>{{item.thongTinRap.tenHeThongRap}}</td>
-              <td>{{item.thongTinRap.tenCumRap}}</td>
-              <td>{{item.ngayChieuGioChieu | date: 'shortDate'}}</td>
-              <td>{{item.ngayChieuGioChieu | date:'mediumTime'}}</td>
-              <td>
-                <button
-                appBtnEdit
-                class="booking-btn"
-                (click)='chonGhe(item.maLichChieu)'
+        <!-- lịch chiếu theo cụm rạp -->
+        <div class="lich-chieu-wrap">
+          <div class="lich-chieu">
+            <div *ngFor="let item of cumRapChieu">
+              <p class="lich-chieu-intro">{{ item.tenCumRap }}</p>
+                <ng-container>
+                  <div class="lich-chieu-body">
+                    <app-show-time-item *ngFor="let _item of item.lichChieuPhim" [showtime]="_item"></app-show-time-item>
+                  </div>
+                </ng-container>
+                <!-- <ng-template #notice>
+                  <p class="notice">Không có suất chiếu</p>
+                </ng-template> -->
+            </div>
+
+            <!-- <ng-container *ngIf="this.cumRapChieu.length > 0; else notice">
+              <div class="lich-chieu-body" *ngFor="let item of lichChieuTheoRap">
+                <app-show-time-item
+                  class="lich-chieu-card"
+                  *ngFor='let _item of item.lichChieuPhim'
+                  [showtime]="_item"
                 >
-                <a>Chọn ghế</a>
-              </button></td>
-          </ng-container>
-          </tr>
-            <!-- <ng-template #notice>
-                <h2>Không có lịch chiếu ở hệ thống rạp {{showtimes.value}}</h2>
+                </app-show-time-item>
+              </div>
+            </ng-container>
+            <ng-template #notice>
+              <p class="notice">Không có suất chiếu</p>
             </ng-template> -->
-        </tbody>
-
-      </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

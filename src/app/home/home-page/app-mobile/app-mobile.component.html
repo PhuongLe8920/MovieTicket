@@ -1,0 +1,54 @@
+<div class="app-mobile">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 left">
+        <h1>
+          Ứng dụng tiện lợi dành cho <br />
+          người yêu điện ảnh
+        </h1>
+        <p>
+          Không chỉ đặt vé, bạn còn có thể bình luận phim, chấm điểm rạp và đổi
+          quà hấp dẫn.
+        </p>
+        <button appButton class="btn btn-app">
+          <a
+            href="https://apps.apple.com/us/app/123phim-mua-ve-lien-tay-chon/id615186197"
+            target="_blank"
+            >App miễn phí - Tải về ngay!</a
+          >
+        </button>
+        <p>
+          CINEMA TICKET có hai phiên bản
+          <span
+            ><a
+              href="https://apps.apple.com/us/app/123phim-mua-ve-lien-tay-chon/id615186197"
+              target="_blank"
+            >
+              iOS</a
+            ></span
+          >
+          &
+          <span
+            ><a
+              href="https://play.google.com/store/apps/details?id=vn.com.vng.phim123"
+              target="_blank"
+              >Android</a
+            ></span
+          >
+        </p>
+      </div>
+      <div class="col-lg-6 right">
+        <div class="mobile-slide">
+          <img class="mobile" src="./../../../../assets/img/mobile.png" />
+          <div class="slide-wrap">
+            <owl-carousel-o [options]="customOptions">
+              <ng-template carouselSlide *ngFor='let item of listSlide'>
+                <img class="slide" [src]='item.src'>
+              </ng-template>
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

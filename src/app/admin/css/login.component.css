@@ -1,0 +1,12 @@
+.login {
+  padding-top: 30px;
+}
+
+.login label {
+  font-size: 15px;
+}
+
+.login mat-form-field {
+  width: 100%;
+}
+/*# sourceMappingURL=login.component.css.map */

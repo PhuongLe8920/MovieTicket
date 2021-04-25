@@ -1,11 +1,43 @@
-button {
-  width: 50px;
-  height: 40px;
+button.item-seat {
   border: solid hsl(45, 100%, 51%);
   margin: none;
+  margin-bottom: 2px;
   padding: none;
 }
 .seat-unavailable {
   background-color: grey;
   pointer-events: none;
+}
+
+@media screen and (min-width: 425px) {
+  button.item-seat {
+    width: 15px;
+    height: 14px;
+    margin-right: 2px;
+    padding: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  button.item-seat {
+    width: 28px;
+    height: 23px;
+    margin-right: 2px;
+    padding: auto;
+  }
+}
+@media screen and (min-width: 992px)  {
+  button.item-seat {
+    width: 37px;
+    height: 30px;
+    margin-right: 2px;
+    padding: auto;
+  }
+}
+@media screen and (min-width: 1200px)  {
+  button.item-seat {
+    width: 45px;
+    height: 38px;
+    margin-right: 2px;
+    padding: auto;
+  }
 }

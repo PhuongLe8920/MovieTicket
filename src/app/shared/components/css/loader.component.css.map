@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,QAAQ,EAAC,KAAK;EACd,OAAO,EAAC,KAAK;EACb,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,IAAI;EACX,gBAAgB,EAAE,qBAAwB;EAC1C,OAAO,EAAC,KAAK;CACd;;AAED,AAAA,QAAQ,CAAC;EACP,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAC,GAAG;EACP,IAAI,EAAC,GAAG;EACR,SAAS,EAAE,qBAAoB;CAChC",
+    "sources": [
+        "../loader/loader.component.scss"
+    ],
+    "names": [],
+    "file": "loader.component.css"
+}

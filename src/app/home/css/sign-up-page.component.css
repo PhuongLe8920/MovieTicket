@@ -1,0 +1,15 @@
+table, td, th, thead, tr {
+  border: 1px solid #bbbaba !important;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=sign-up-page.component.css.map */

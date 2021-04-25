@@ -10,10 +10,10 @@
 
 <div class="card m-3">
   <img class="card-img-top" [src]="itemContent.img" alt="">
-  <div class="card-body">
-    <a class="card-title" routerLink="/tin-tuc">
+  <div class="card-body card-overlay">
+    <a class="card-title" href='#tin-tuc'>
       <h5>{{itemContent.title}}</h5>
     </a>
-    <p class="card-text">{{itemContent.detail | cutString:120 }}</p>
+    <p class="card-text">{{itemContent.detail | cutString:150 }}</p>
   </div>
 </div>

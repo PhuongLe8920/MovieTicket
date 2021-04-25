@@ -18,7 +18,7 @@ export class MoviesService {
     dots: false,
     navSpeed: 600,
     navText: ['&#8249', '&#8250;'],
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 3000,
     autoplaySpeed: 1000,
     responsive: {
@@ -71,6 +71,14 @@ export class MoviesService {
     frm.append('manhom','GP05')
     return this.httpClient.post(api, frm).pipe(tap(),
     catchError(err => {
+      return this.handleErr(err);
+    }))
+  }
+
+  updateMovie (data: any): Observable<any> {
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhimUpload';
+    return this.httpClient.post(api, data).pipe(tap(),
+    catchError (err => {
       return this.handleErr(err);
     }))
   }

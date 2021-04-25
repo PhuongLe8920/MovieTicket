@@ -1,0 +1,35 @@
+.list-movie .now, .comming {
+  margin: 0;
+}
+
+.btn {
+  width: 300px;
+  font-size: 1rem;
+}
+
+.btn {
+  font-size: 1rem;
+  border: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.btn-active {
+  color: tomato;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn-active:hover {
+  color: tomato;
+  background-color: transparent;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=list-phim.component.css.map */

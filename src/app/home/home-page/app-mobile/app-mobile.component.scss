@@ -1,0 +1,89 @@
+.app-mobile {
+  box-sizing: border-box;
+  clear: both;
+  width: 100%;
+  background-image: url(./../../../../assets/img/backapp.jpg);
+  background-size: cover;
+  background-position-y:center;
+  color: white;
+  font-size: 1rem;
+  .container {
+    width: 70%;
+    padding: 80px 10px 50px;
+    .left {
+      text-align: justify;
+      padding: 30px 10px 30px;
+      line-height: 2rem;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      h1,p {
+        margin: 20px;
+      }
+      button.btn-app {
+        margin-left: 20px;
+      }
+      p:last-child {
+        margin-top: 5px;
+      }
+      span {
+        text-decoration: underline;
+      }
+    }
+    .right {
+      text-align: center;
+      .mobile-slide {
+        height: 423px;
+        width: fit-content;
+        position: relative;
+        img.mobile {
+          align-items: center;
+          width: 200px;
+          height: 423px;
+          overflow: hidden;
+          background-color: transparent;
+        }
+        .slide-wrap {
+          width: 95%;
+          height: 96%;
+          position: absolute;
+          top: 8px;
+          left: 40px;
+          transform: translateX(-18%);
+          background-color: transparent;
+          border-radius: 22px;
+          overflow: hidden;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .app-mobile {
+    background-repeat: repeat-y;
+    height: fit-content;
+    .container {
+      width: 100%;
+      .left {
+        text-align: center;
+        padding: auto;
+        h1 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+      }
+      .right {
+        text-align: center;
+        padding: auto;
+        img.mobile {
+          align-items: center;
+        }
+      }
+    }
+
+  }
+}
+

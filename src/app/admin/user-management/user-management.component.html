@@ -1,6 +1,6 @@
 <div class="container user-form">
   <div class="row">
-    <div class="col-sm-12 col-md-6 mx-auto">
+    <div class="col-sm-12 col-md-8 mx-auto">
       <h2>Nhập thông tin người dùng</h2>
       <form #formDangKy="ngForm" (ngSubmit)="signUp(formDangKy)">
         <!-- Tài khoản -->
@@ -214,7 +214,7 @@
     </div>
   </div>
 
-  <table table *ngIf="listUser.length > 0">
+  <table class="table" table *ngIf="listUser.length > 0">
     <thead>
       <tr class="text-center">
         <th>STT</th>
@@ -247,12 +247,12 @@
             [attr.data-sdt]="item.soDt"
             [attr.data-maNhom]="item.maNhom"
             [attr.data-maLoai]="item.maLoaiNguoiDung"
-            class="btn"
+            class="btn btn-update"
             (click)="updateForm(btnUpdate)"
           >
             Cập nhật
           </button>
-          <button appBtnEdit class="btn ml-2" (click)="delete(item.taiKhoan)">
+          <button appBtnEdit class="btn btn-update ml-2" (click)="delete(item.taiKhoan)">
             Xoá
           </button>
         </td>

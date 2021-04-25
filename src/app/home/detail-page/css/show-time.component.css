@@ -1,0 +1,221 @@
+/* Showtimes */
+.showtimes {
+  background-color: white;
+  margin: 30px auto;
+  padding: auto;
+  padding-bottom: 30px;
+  border-radius: 7px;
+  width: 95%;
+}
+
+.showtimes h4 {
+  text-align: center;
+  margin: 15px 0 25px;
+  letter-spacing: 5px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.showtimes .showtimes-options {
+  margin: auto;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  border: none;
+  background-color: #0a2029f2;
+  color: white;
+}
+
+.showtimes-detail ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.showtimes-detail a {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.showtimes-detail .weekend a {
+  color: #f44336;
+}
+
+.showtimes-detail .weekend a:hover {
+  color: coral;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.showtimes-detail .booking-btn a {
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.showtimes-detail .booking-btn a:hover {
+  color: black;
+}
+
+.showtimes-detail table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5px;
+  overflow-x: hidden;
+}
+
+.showtimes-detail table thead {
+  background-color: #0a2029f2;
+  color: white;
+  display: table;
+  width: calc(100% - 5px);
+  table-layout: fixed;
+  height: 40px;
+}
+
+.showtimes-detail table tbody {
+  display: block;
+  max-height: 200px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.showtimes-detail table tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 40px;
+}
+
+.showtimes-detail table td, .showtimes-detail table th {
+  word-wrap: break-word;
+  width: auto;
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 2px;
+  font-weight: normal;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #949393;
+  border-radius: 10px;
+}
+
+.list-cinema {
+  float: none;
+  height: 542px;
+  margin-bottom: 30px;
+}
+
+.list-cinema .logo-wrap {
+  float: left;
+  width: 30%;
+  border: 1px solid #ccc9c9;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list-cinema .logo-wrap a {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list-cinema .logo-wrap a:hover {
+  cursor: pointer;
+}
+
+.list-cinema .logo-wrap a img {
+  opacity: .5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.list-cinema .logo-wrap a img:hover {
+  opacity: 1;
+}
+
+.list-cinema .logo-wrap a img:visited {
+  opacity: 1;
+}
+
+.list-cinema .logo-wrap a p {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 20px;
+  margin: 0px;
+  top: 50%;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+}
+
+.list-cinema .lich-chieu-wrap {
+  float: left !important;
+  width: 65%;
+  height: 100%;
+  border: 1px solid #ccc9c9;
+  overflow-y: scroll;
+}
+
+.list-cinema .lich-chieu-wrap .lich-chieu {
+  display: block;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.list-cinema .lich-chieu-wrap .lich-chieu .lich-chieu-intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.list-cinema .lich-chieu-wrap .lich-chieu .lich-chieu-intro img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.list-cinema .lich-chieu-wrap .lich-chieu .lich-chieu-intro p {
+  padding-top: 10px;
+  font-size: 1rem;
+}
+
+.list-cinema .lich-chieu-wrap .lich-chieu .lich-chieu-body .lich-chieu-card {
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5px;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b3b2b2;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=show-time.component.css.map */

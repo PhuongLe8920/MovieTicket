@@ -74,6 +74,26 @@
   }
 }
 
+.doi-tac {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  width: fit-content;
+  gap: 20px;
+  a {
+    position: relative;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+
 @media (max-width: 767px) {
   .site-footer {
     padding-bottom: 0;
@@ -82,9 +102,15 @@
   .site-footer .social-icons {
     text-align: center;
   }
+  iframe {
+    width: fit-content;
+  }
 }
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
     margin-bottom: 30px;
+  }
+  iframe {
+    width: fit-content;
   }
 }

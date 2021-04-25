@@ -1,29 +1,29 @@
 <!-- list rạp -->
-<div class="container list-cinema" id='cum-rap'>
+<div class="container list-cinema" id="cum-rap">
   <div class="logo-wrap">
     <div *ngFor="let item of listRap">
-        <a (click)="changeDK(item.maHeThongRap)"><img [src]="item.logo" /></a>
+      <a (click)="changeDK(item.maHeThongRap)"><img [src]="item.logo" /></a>
     </div>
   </div>
 
   <!-- cụm rạp -->
   <div class="cum-rap-wrap">
-    <div *ngFor="let cumRap of listCumRap | slice: 1:10">
-        <app-cinema class="cum-rap" [cinema]="cumRap"></app-cinema>
+    <div *ngFor="let cumRap of listCumRap">
+      <app-cinema class="cum-rap" [cinema]="cumRap"></app-cinema>
     </div>
   </div>
 
   <!-- list phim theo cụm rạp -->
   <div class="lich-chieu-wrap">
-    <div class="lich-chieu" *ngFor='let item of this.listLichChieuRap'>
+    <div class="lich-chieu" *ngFor="let item of this.listLichChieuRap">
       <div class="lich-chieu-intro">
-        <img [src]='item.hinhAnh'>
-        <p>{{item.tenPhim}}</p>
+        <img [src]="item.hinhAnh" />
+        <p>{{ item.tenPhim }}</p>
       </div>
-      <div class="lich-chieu-body" *ngFor='let _item of this.item.lstLichChieuTheoPhim | slice:0:4'>
-        <app-show-time-by-cinema class="lich-chieu-card" [showtime]='_item'>
-          <!-- <p>{{_item.ngayChieuGioChieu}}</p> -->
-        </app-show-time-by-cinema>
+
+      <div class="lich-chieu-body">
+          <app-show-time-by-cinema class="lich-chieu-card" *ngFor="let _item of this.item.lstLichChieuTheoPhim | slice:0:18" [showtime]="_item">
+          </app-show-time-by-cinema>
       </div>
     </div>
   </div>

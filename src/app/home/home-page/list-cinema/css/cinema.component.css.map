@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,GAAG,CAAC,KAAK,CAAC,OAAkB;CAW5C;;AAdD,AAIE,OAJK,CAIL,EAAE,EAJJ,OAAO,CAID,CAAC,CAAC;EACJ,aAAa,EAAE,GACjB;CAAC;;AANH,AAOE,OAPK,CAOL,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAkB;CAC1B;;AAVH,AAWE,OAXK,CAWL,SAAS,CAAC;EACR,KAAK,EAAE,MAAM;CACd",
+    "sources": [
+        "../cinema/cinema.component.scss"
+    ],
+    "names": [],
+    "file": "cinema.component.css"
+}

@@ -1,6 +1,6 @@
 <ng-container *ngIf="!seat.status; else seletectSeat">
-  <button [ngClass]="{'seat-unavailable': seat.daDat}"  class='btn mr-2 mb-2 text-black' [class.btn-success]="status" (click)="bookSeat()"> {{seat.id}} </button>
+  <button [ngClass]="{'seat-unavailable': seat.daDat}"  class='item-seat' [class.btn-success]="status" (click)="bookSeat()"> {{seat.id}} </button>
 </ng-container>
 <ng-template #seletectSeat>
-  <button class="btn btn-secondary mr-2 mb-2 disabled" style='cursor: not-allowed;'>{{seat.id}}</button>
+  <button class="item-seat btn-secondary disabled" style='cursor: not-allowed;'>{{seat.id}}</button>
 </ng-template>

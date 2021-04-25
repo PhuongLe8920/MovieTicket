@@ -1,0 +1,13 @@
+.detail-page {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.detail-page-overlay {
+  background-color: rgba(10, 32, 41, 0.9);
+  height: 100%;
+  width: 100%;
+  padding-bottom: 30px;
+}
+/*# sourceMappingURL=detail-page.component.css.map */

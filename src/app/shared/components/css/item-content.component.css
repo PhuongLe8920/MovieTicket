@@ -1,0 +1,14 @@
+.card {
+  width: 90%;
+  border: none;
+}
+
+.card-img-top {
+  border-radius: 5px;
+  width: 100%;
+}
+
+a.card-title {
+  text-decoration: none;
+}
+/*# sourceMappingURL=item-content.component.css.map */

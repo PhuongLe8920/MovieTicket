@@ -21,9 +21,13 @@ export class MovieManagementComponent implements OnInit {
     this.getListMovie();
   }
 
+  checkDeactivate() {
+    return this.addMovieForm.submitted;
+  }
+
   getListMovie() {
     this.movieSV.getListMovieComing().subscribe((result: any) => {
-      console.log(result)
+      // console.log(result)
       this.listMovie = result;
     })
   }
@@ -41,7 +45,7 @@ export class MovieManagementComponent implements OnInit {
       danhGia: form.value.danhGia,
     }
     this.movieSV.addMovie(objMovie).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       if(data) {
         this.listMovie.push(objMovie);
         localStorage.setItem('movie', JSON.stringify(data));
@@ -52,6 +56,7 @@ export class MovieManagementComponent implements OnInit {
       }
     })
     this.addMovieForm.reset();
+    this.getListMovie();
   }
 
   uploadImg () {
@@ -61,25 +66,39 @@ export class MovieManagementComponent implements OnInit {
     })
   }
 
-  updateMovie(movie:any) {
-
+  updateMovie(form:any) {
+    const objMovie = {
+      maPhim: form.value.maPhim,
+      tenPhim: form.value.tenPhim,
+      biDanh: form.value.biDanh,
+      trailer: form.value.trailer,
+      hinhAnh: form.value.hinhAnh,
+      moTa: form.value.moTa,
+      maNhom: form.value.maNhom,
+      ngayKhoiChieu: form.value.ngayKhoiChieu,
+      danhGia: form.value.danhGia,
+    }
+    // console.log(objMovie);
+    this.movieSV.updateMovie(objMovie).subscribe(data => {
+      // console.log(data);
+    })
+    this.getListMovie();
   }
 
-  checkDeactivate() {
-    return this.addMovieForm.submitted;
-  }
+
 
   /**check error 500 */
   deleteMovie(maPhim: any) {
-    console.log(maPhim)
+    // console.log(maPhim)
     this.movieSV.deleteMovie(maPhim).subscribe(response => {
       this.listMovie = [...this.listMovie.splice(maPhim)];
       return this.listMovie;
     })
+    this.getListMovie();
   }
 
   updateForm(movie: any){
-    console.log(movie);
+    // console.log(movie);
     this.isUpdating = true;
     let tenPhim = movie.tenPhim;
     let biDanh = movie.biDanh;

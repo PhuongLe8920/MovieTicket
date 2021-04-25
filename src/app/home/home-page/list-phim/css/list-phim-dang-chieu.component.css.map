@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../list-phim-dang-chieu/list-phim-dang-chieu.component.scss"
+    ],
+    "names": [],
+    "file": "list-phim-dang-chieu.component.css"
+}

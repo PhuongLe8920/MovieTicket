@@ -1,0 +1,19 @@
+.cinema {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #ccc9c9;
+}
+
+.cinema h5, .cinema p {
+  margin-bottom: 0px;
+}
+
+.cinema p {
+  font-size: 10px;
+  color: #858484;
+}
+
+.cinema .chi-tiet {
+  color: tomato;
+}
+/*# sourceMappingURL=cinema.component.css.map */

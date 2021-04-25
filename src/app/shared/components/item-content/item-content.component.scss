@@ -1,12 +1,36 @@
 .card {
   width: 90%;
   border: none;
+  .card-img-top {
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+  }
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    &:hover{
+      opacity: 1;
+      transition: all .5s;
+    }
+    a.card-title {
+      text-decoration: none;
+      color:rgb(5, 174, 253);
+      h5 {
+        font-size: 1rem;
+      }
+      &:hover {
+        color: tomato;
+      }
+    }
+  }
 }
 
-.card-img-top {
-  border-radius: 5px;
-  width: 100%;
-}
-a.card-title {
-  text-decoration: none;
-}
+
+

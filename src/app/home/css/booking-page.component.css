@@ -1,0 +1,32 @@
+.booking {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#b876067e), to(white));
+  background-image: linear-gradient(to top, #b876067e, white);
+  width: 100%;
+}
+
+.booking .container {
+  padding-top: 80px;
+}
+
+.booking h4 {
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.booking h5 {
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.screen {
+  padding: 0 20px 0 0;
+}
+
+.screen img {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+/*# sourceMappingURL=booking-page.component.css.map */

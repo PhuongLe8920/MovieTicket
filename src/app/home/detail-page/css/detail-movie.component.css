@@ -1,0 +1,91 @@
+/* detail-movie */
+.movie-name {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#f44336), to(#f79f07));
+  background-image: linear-gradient(to top right, #f44336, #f79f07);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 2;
+  font-size: 25px;
+  text-align: center;
+}
+
+.detail-movie {
+  color: white;
+  font-size: 13px;
+  text-align: justify;
+  position: relative;
+  top: 10%;
+}
+
+.detail-movie h4 {
+  margin-left: 30px;
+  margin-top: 30px;
+  font-size: 2.3rem;
+  width: 90%;
+}
+
+.detail-movie img {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.btn-detail-movie button {
+  left: 20px;
+  padding: 5px 20px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 5px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#f44336), to(#ce8405fd));
+  background-image: linear-gradient(to top right, #f44336, #ce8405fd);
+  color: white;
+}
+
+.detail-movie a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.text-detail {
+  top: 20%;
+  padding: 20px;
+}
+
+.text-detail {
+  color: white;
+  font-size: 16px;
+  text-align: justify;
+  width: 100%;
+}
+
+@media screen and (min-width: 425px) {
+  .text-detail {
+    width: 100%;
+    padding: 20px;
+  }
+  .btn-detail-movie button {
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .text-detail {
+    width: 100%;
+    padding: 50px;
+  }
+  .btn-detail-movie button {
+    left: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text-detail {
+    width: 100%;
+    padding: 50px;
+  }
+  .btn-detail-movie button {
+    left: 50px;
+  }
+}
+/*# sourceMappingURL=detail-movie.component.css.map */

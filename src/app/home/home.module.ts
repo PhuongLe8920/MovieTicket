@@ -29,6 +29,8 @@ import { ShowTimeComponent } from './detail-page/show-time/show-time.component';
 import { ListCinemaComponent } from './home-page/list-cinema/list-cinema.component';
 import { CinemaComponent } from './home-page/list-cinema/cinema/cinema.component';
 import { ShowTimeByCinemaComponent } from './home-page/list-cinema/show-time-by-cinema/show-time-by-cinema.component';
+import { ShowTimeItemComponent } from './detail-page/show-time-item/show-time-item.component';
+import { AppMobileComponent } from './home-page/app-mobile/app-mobile.component';
 
 @NgModule({
   imports: [
@@ -63,6 +65,8 @@ import { ShowTimeByCinemaComponent } from './home-page/list-cinema/show-time-by-
     ListCinemaComponent,
     CinemaComponent,
     ShowTimeByCinemaComponent,
+    ShowTimeItemComponent,
+    AppMobileComponent,
   ],
 
   exports: [HomePageComponent],

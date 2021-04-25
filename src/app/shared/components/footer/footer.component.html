@@ -15,6 +15,16 @@
             <p>Số Điện Thoại (Hotline): 1900 900 900</p>
             <p>Email: support@cinematicket.vn</p>
           </div>
+          <div class="container">
+            <h3 class="text-white">ĐỐI TÁC</h3>
+            <div class="doi-tac">
+              <a  *ngFor='let icon of listIcon' [href]="icon.link" target="_blank" [title]='icon.title'>
+                <img [src]='icon.src'>
+              </a>
+
+            </div>
+
+          </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <iframe class="mx-auto px-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.509752233211!2d106.67765461406813!3d10.772215392324343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f211a20768b%3A0xb9bb32aa11cf2d62!2zMTEyIENhbyBUaOG6r25nLCBQaMaw4budbmcgNCwgUXXhuq1uIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1615262404395!5m2!1svi!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

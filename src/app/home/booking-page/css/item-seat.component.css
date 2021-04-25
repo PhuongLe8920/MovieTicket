@@ -2,5 +2,12 @@ button {
   width: 50px;
   height: 40px;
   border: solid #ffc105;
+  margin: none;
+  padding: none;
+}
+
+.seat-unavailable {
+  background-color: grey;
+  pointer-events: none;
 }
 /*# sourceMappingURL=item-seat.component.css.map */

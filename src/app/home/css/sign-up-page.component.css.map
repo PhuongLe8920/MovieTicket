@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,KAAK,EAAE,EAAE,EAAE,EAAE,EAAE,KAAK,EAAE,EAAE,CAAC;EACvB,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,OAAkB,CAAC,UAAU;CAChD;;AACD,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,QAAQ;CAC1B;;AAED,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "../sign-up-page/sign-up-page.component.scss"
+    ],
+    "names": [],
+    "file": "sign-up-page.component.css"
+}
