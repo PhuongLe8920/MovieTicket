@@ -78,20 +78,24 @@ export class UserManagementComponent implements OnInit {
     // console.log(objUser)
     this.accService.updateUser(objUser).subscribe(data => {
       // console.log(data);
-      this.getListUser();
+      if(data) {
+        alert('Cập nhật thành công!')
+        this.getListUser();
+      }
     })
   }
 
-
+/**check error: delete successfully but server returns error */
   delete(tk: any) {
-    console.log(tk);
+    // console.log(tk);
     this.accService.deleteUser(tk).subscribe(response => {
+      // console.log(response)
       this.listUser = [...this.listUser.splice(tk)]
-      console.log(this.listUser);
+      // console.log(this.listUser);
       return this.listUser;
     })
     this.getListUser();
-  }
+  };
 
   updateForm(user:any) {
     // console.log(user)

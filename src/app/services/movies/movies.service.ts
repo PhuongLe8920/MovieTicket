@@ -18,7 +18,7 @@ export class MoviesService {
     dots: false,
     navSpeed: 600,
     navText: ['&#8249', '&#8250;'],
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 3000,
     autoplaySpeed: 1000,
     responsive: {
@@ -64,11 +64,11 @@ export class MoviesService {
 
   // fix lỗi upload
   uploadImg (): Observable<any> {
-    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh';
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/UploadHinhAnhPhim';
     var frm = new FormData();
-    frm.append('file','assets/img/1990.jpg');
-    frm.append('tenPhim','1990')
-    frm.append('manhom','GP05')
+    frm.append('File','1990.jpg');
+    frm.append('tenPhim','1990');
+    frm.append('manhom','GP05');
     return this.httpClient.post(api, frm).pipe(tap(),
     catchError(err => {
       return this.handleErr(err);
@@ -76,7 +76,7 @@ export class MoviesService {
   }
 
   updateMovie (data: any): Observable<any> {
-    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhimUpload';
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhim';
     return this.httpClient.post(api, data).pipe(tap(),
     catchError (err => {
       return this.handleErr(err);
@@ -84,8 +84,8 @@ export class MoviesService {
   }
 
   deleteMovie (maPhim: any): Observable<any> {
-    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim';
-    return this.httpClient.delete(api,maPhim).pipe(tap(),
+    const api = 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=' + maPhim;
+    return this.httpClient.delete(api).pipe(tap(),
     catchError(err => {
       return this.handleErr(err);
     }))

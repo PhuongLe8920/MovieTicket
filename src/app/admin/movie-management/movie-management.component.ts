@@ -59,9 +59,10 @@ export class MovieManagementComponent implements OnInit {
     this.getListMovie();
   }
 
+
   uploadImg () {
     this.movieSV.uploadImg().subscribe(data => {
-      // this.frm = data;
+      // this.form = data;
       console.log(data)
     })
   }
@@ -80,17 +81,17 @@ export class MovieManagementComponent implements OnInit {
     }
     // console.log(objMovie);
     this.movieSV.updateMovie(objMovie).subscribe(data => {
-      // console.log(data);
+      console.log(data);
+      this.getListMovie();
     })
-    this.getListMovie();
+
   }
 
-
-
-  /**check error 500 */
+  /**check error: delete successfully but server returns error */
   deleteMovie(maPhim: any) {
     // console.log(maPhim)
     this.movieSV.deleteMovie(maPhim).subscribe(response => {
+      // console.log(response);
       this.listMovie = [...this.listMovie.splice(maPhim)];
       return this.listMovie;
     })

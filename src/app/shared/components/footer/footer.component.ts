@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.listIcon = this.contentSV.listIcon;
-    console.log(this.listIcon);
+    // console.log(this.listIcon);
   }
 
 }
