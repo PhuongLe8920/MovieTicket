@@ -21,7 +21,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    routes,
+    { scrollPositionRestoration: 'top'} // lỗi href của thẻ a
+    )],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -15,11 +15,6 @@
     id="collapsibleNavId"
   >
     <ul class="navbar-nav me-auto mb-lg-0 center">
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLink="/admin/dash-board"
-          >DASH BOARD<span class="sr-only">(current)</span></a
-        >
-      </li> -->
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/admin/movie-management']"
           >QUẢN LÝ PHIM</a
@@ -36,24 +31,22 @@
       </li>
     </ul>
 
-    <ul class="navbar-nav me-auto mb-lg-0 right">
+    <ul class="navbar-nav right">
       <!-- Đăng ký/Đăng nhập -->
-      <li class="nav-item">
-        <ng-container>
-          <a class="dang-ky" *ngIf="!isLogin; else Login">
-            <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
-            <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
-          </a>
+      <li class="nav-item dang-ky">
+        <ng-container *ngIf="!isLogin; else Login">
+          <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
+          <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
         </ng-container>
+      </li>
+      <li class="nav-item">
         <ng-template #Login>
-          <a class="nav-link hello"
-            >XIN CHÀO {{ userLogin.taiKhoan | uppercase | cutString: 8 }}</a
-          >
-          <a class="nav-link" routerLink="/">
+          <a class="nav-link" routerLink="/" title="Đăng xuất">
             <button class="logout" type="submit" (click)="logOut()">
-              THOÁT
+              <img class="avatar" src="./../../../../assets/img/avatar.png" />
             </button>
           </a>
+          <a class="nav-link hello">{{ userLogin.taiKhoan | uppercase }}</a>
         </ng-template>
       </li>
       <!-- End---Đăng ký/Đăng nhập -->

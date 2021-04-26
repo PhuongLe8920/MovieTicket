@@ -2,51 +2,91 @@
   position: fixed;
   z-index: 100;
   width: 100%;
-  background-color: hsla(197, 61%, 10%, 0.95);
-  padding: none;
-  .header-logo.left {
+  background-color: hsla(197, 67%, 10%, 0.95);
+  .header-logo {
     padding: 0px;
     img {
       width: 60px;
       height: 40px;
     }
   }
-  .center ul {
-    margin-bottom: 0px;
+  .center {
+    width: 40%;
+    justify-content: space-around;
+    a {
+      color: white;
+    }
   }
-  li{
-    display: flex;
-    margin-right: 50px;
-    font-size: 0.8rem;
-  }
-
-  a, a.dang-ky {
-    color: whitesmoke;
-    display: flex;
-    text-decoration: none;
-  }
-
-  .hello {
-    color: whitesmoke;
-    text-decoration: none;
-  }
-  a.nav-link:hover {
-    color: tomato!important;
-  }
-  button.logout {
-    background-color: transparent;
-    color: whitesmoke;
-    border: none;
-    padding: 0;
-    padding-left: 10px;
-  }
-  .logout:hover {
-    color: tomato;
+  .right {
+    .dang-ky {
+      gap: 3px;
+      a.hello {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    button.logout {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+    .logout:hover {
+      color: tomato;
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
   }
 }
 
-@media screen and (max-width: 768px) {
-  .center ul {
-    margin-bottom: 0px;
+li{
+  display: flex;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+a.nav-link:hover {
+  color: tomato!important;
+}
+
+
+@media screen and (min-width: 375px) {
+  .right {
+    position: relative;
+    a.hello {
+      color: rgb(255, 255, 255, .5);
+      position: absolute;
+      top: 50%;
+      left: 50px;
+      transform: translateY(-50%);
+    }
   }
 }
+
+@media screen and (min-width: 992px) {
+  .header {
+    position: fixed;
+  }
+  .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .right {
+    position: absolute;
+    width: 200px;
+    align-items: right;
+    right: 0;
+    .dang-ky {
+      gap: 3px;
+      a {
+        padding-right: 0;
+        color: rgb(255, 255, 255, .5);
+      }
+    }
+  }
+}
+
+
+

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActivateGuard } from '../guards/can-activate.guard';
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
-import { AboutPageComponent } from './about-page/about-page.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -18,14 +17,6 @@ const routes: Routes = [
       {
         path: '',
         component: HomePageComponent,
-      },
-      // {
-      //   path: 'list-movie-page',
-      //   component: ListMoviePageComponent,
-      // },
-      {
-        path: 'about-page',
-        component: AboutPageComponent,
       },
       {
         path: 'booking-page/:id',

@@ -8,7 +8,6 @@ import { ListPhimComponent } from './home-page/list-phim/list-phim.component';
 import { ListPhimDangChieuComponent } from './home-page/list-phim/list-phim-dang-chieu/list-phim-dang-chieu.component';
 import { ListPhimSapChieuComponent } from './home-page/list-phim/list-phim-sap-chieu/list-phim-sap-chieu.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
 import { ItemSeatComponent } from './booking-page/item-seat/item-seat.component';
 import { ListSeatComponent } from './booking-page/list-seat/list-seat.component';
 import { ContentComponent } from './home-page/content/content.component';
@@ -50,7 +49,6 @@ import { AppMobileComponent } from './home-page/app-mobile/app-mobile.component'
     ListPhimDangChieuComponent,
     ListPhimSapChieuComponent,
     BookingPageComponent,
-    AboutPageComponent,
     ItemSeatComponent,
     ListSeatComponent,
     ContentComponent,

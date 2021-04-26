@@ -54,7 +54,7 @@ export class ListSeatComponent implements OnInit {
           this.unavailableSeat++
         }
       })
-      // console.log(this.listSeat)
+      console.log(this.listSeat)
     })
   }
 

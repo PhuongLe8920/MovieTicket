@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {  AfterContentChecked,  Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-admin',
   templateUrl: './header-admin.component.html',
   styleUrls: ['./header-admin.component.scss']
 })
-export class HeaderAdminComponent implements OnInit {
+export class HeaderAdminComponent implements OnInit, AfterContentChecked {
     isMenuCollapsed = true;
     isLogin = false;
     userLogin = {
@@ -18,18 +17,31 @@ export class HeaderAdminComponent implements OnInit {
       soDt: "",
       taiKhoan: ""
     }
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // check bất đồng bộ
     if(localStorage.getItem('user')){
       const user = JSON.parse(localStorage.getItem('user') as string);
       if(user){
         this.isLogin = true;
         this.userLogin = user;
-        console.log(this.isLogin, this.userLogin)
+        // console.log(this.isLogin, this.userLogin)
       }
       else {
+        this.isLogin = false;
+      }
+    }
+  }
+
+  ngAfterContentChecked(): void {
+    const item = localStorage.getItem('user');
+    if (!this.isLogin && !!item) {
+      const user = JSON.parse(String(localStorage.getItem('user')));
+      if (user) {
+        this.isLogin = true;
+        this.userLogin = user;
+        console.log(this.isLogin, this.userLogin)
+      } else {
         this.isLogin = false;
       }
     }
